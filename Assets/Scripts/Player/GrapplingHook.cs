@@ -361,7 +361,10 @@ public class GrapplingHook : MonoBehaviour
         }
         else if (Input.GetAxis("Vertical") < 0f && ropeAttached)
         {
-            ropeJoint.distance += Time.deltaTime * climbSpeed;
+            if (ropeJoint.distance <= ropeMaxCastDistance)
+            {
+                ropeJoint.distance += Time.deltaTime * climbSpeed;
+            }
         }
     }
 
