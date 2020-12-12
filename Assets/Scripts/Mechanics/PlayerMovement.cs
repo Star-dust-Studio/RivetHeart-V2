@@ -24,16 +24,26 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 1.0f;
     public LayerMask ground;
 
-    /// <summary>
-    /// 0 = allow all movements, 1 = restrict hook, 2 = restrict all movements
-    /// </summary>
-    private int playerState;
-
     void Awake()
     {
         playerSprite = GetComponent<SpriteRenderer>();
         rBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+    }
+
+    bool IsGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 dir = Vector2.down;
+
+        Debug.DrawRay(position, dir, Color.green);
+        RaycastHit2D hit = Physics2D.Raycast(position, dir, groundCheckRadius, ground);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     void Update()
@@ -54,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            Debug.Log("jump");
             isJumping = true;
             //animator.SetTrigger("Jump");
             animator.SetBool("IsJumping", true);
@@ -64,14 +75,18 @@ public class PlayerMovement : MonoBehaviour
     {
         rBody.velocity = new Vector2(horizontalInput * speed, rBody.velocity.y);
 
-        if (horizontalInput < 0f || horizontalInput > 0f)
-        {
-            playerSprite.flipX = horizontalInput < 0f;
-        }
+        playerSprite.flipX = horizontalInput < 0f;
 
         //if (horizontalInput < 0f || horizontalInput > 0f)
         //{
-        //animator.SetFloat("Velocity", Mathf.Abs(horizontalInput));
+            //animator.SetFloat("Velocity", Mathf.Abs(horizontalInput));
+
+
+        //if (isJumping)
+        //{
+        //    rBody.AddForce(new Vector2(0f, jumpSpeed * 10));
+        //    isJumping = false;
+        //}
 
         //if (isSwinging)
         //    {
@@ -134,20 +149,7 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = false;
             }
         }
-    }
 
-    bool IsGrounded()
-    {
-        Vector2 position = transform.position;
-        Vector2 dir = Vector2.down;
 
-        Debug.DrawRay(position, dir, Color.green);
-        RaycastHit2D hit = Physics2D.Raycast(position, dir, groundCheckRadius, ground);
-        if (hit.collider != null)
-        {
-            return true;
-        }
-
-        return false;
     }
 }

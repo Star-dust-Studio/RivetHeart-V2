@@ -283,14 +283,13 @@ MonoBehaviour:
   ropeRenderer: {fileID: 52636903}
   ropeLayerMask:
     serializedVersion: 2
-    m_Bits: 2817
+    m_Bits: 2561
   climbSpeed: 3
   ropeHingeAnchor: {fileID: 1937144760}
   ropeJoint: {fileID: 52636902}
   crosshair: {fileID: 1852935123}
   crosshairSprite: {fileID: 1852935122}
   playerMovement: {fileID: 52636901}
-  ropeMaxCastDistance: 5
 --- !u!114 &52636901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,7 +753,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7761732, y: 1}
+    m_SensorSize: {x: 1.7783784, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

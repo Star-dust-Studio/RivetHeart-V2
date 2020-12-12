@@ -205,7 +205,7 @@ public class GrapplingHook : MonoBehaviour
     private bool ropeAttached;
     private Vector2 playerPosition;
     private List<Vector2> ropePositions = new List<Vector2>();
-    public float ropeMaxCastDistance = 10f;
+    private float ropeMaxCastDistance = 20f;
     private Rigidbody2D ropeHingeAnchorRb;
     private bool distanceSet;
     private bool isColliding;
@@ -251,28 +251,46 @@ public class GrapplingHook : MonoBehaviour
         var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
         playerPosition = transform.position;
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (!ropeAttached)
         {
-            if (!ropeAttached)
-            {
-                SetCrosshairPosition(aimAngle);
-                playerMovement.isSwinging = false;
-            }
-            else
-            {
-                playerMovement.isSwinging = true;
-                playerMovement.ropeHook = ropePositions.Last();
-                crosshairSprite.enabled = false;
-            }
-            UpdateRopePositions();
-            HandleRopeLength();
-            HandleInput(aimDirection);
+            SetCrosshairPosition(aimAngle);
+            playerMovement.isSwinging = false;
         }
         else
         {
-            ResetRope();
+            playerMovement.isSwinging = true;
+            playerMovement.ropeHook = ropePositions.Last();
             crosshairSprite.enabled = false;
+
+            // Wrap rope around points of colliders if there are raycast collisions between player position and their closest current wrap around collider / angle point.
+            //if (ropePositions.Count > 0)
+            //{
+            //    var lastRopePoint = ropePositions.Last();
+            //    var playerToCurrentNextHit = Physics2D.Raycast(playerPosition, (lastRopePoint - playerPosition).normalized, Vector2.Distance(playerPosition, lastRopePoint) - 0.1f, ropeLayerMask);
+            //    if (playerToCurrentNextHit)
+            //    {
+            //        var colliderWithVertices = playerToCurrentNextHit.collider as PolygonCollider2D;
+            //        if (colliderWithVertices != null)
+            //        {
+            //            var closestPointToHit = GetClosestColliderPointFromRaycastHit(playerToCurrentNextHit, colliderWithVertices);
+            //            if (wrapPointsLookup.ContainsKey(closestPointToHit))
+            //            {
+            //                // Reset the rope if it wraps around an 'already wrapped' position.
+            //                ResetRope();
+            //                return;
+            //            }
+
+            //            ropePositions.Add(closestPointToHit);
+            //            wrapPointsLookup.Add(closestPointToHit, 0);
+            //            distanceSet = false;
+            //        }
+            //    }
+            //}
         }
+
+        UpdateRopePositions();
+        HandleRopeLength();
+        HandleInput(aimDirection);
     }
 
     /// <summary>
@@ -281,13 +299,12 @@ public class GrapplingHook : MonoBehaviour
     /// <param name="aimDirection">The current direction for aiming based on mouse position</param>
     private void HandleInput(Vector2 aimDirection)
     {
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
         {
             if (ropeAttached) return;
             ropeRenderer.enabled = true;
 
             var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
-            Debug.Log(hit.point);
             if (hit.collider != null)
             {
                 ropeAttached = true;
@@ -304,13 +321,13 @@ public class GrapplingHook : MonoBehaviour
             }
             else
             {
-                Debug.Log("too short");
                 ropeRenderer.enabled = false;
                 ropeAttached = false;
                 ropeJoint.enabled = false;
             }
         }
-        else
+
+        if (Input.GetMouseButton(1))
         {
             ResetRope();
         }
