@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1; // spaghetti
         playerSprite = GetComponent<SpriteRenderer>();
         rBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
