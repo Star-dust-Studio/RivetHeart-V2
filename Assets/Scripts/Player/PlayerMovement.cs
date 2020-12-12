@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// 0 = allow all movements, 1 = restrict hook, 2 = restrict all movements
     /// </summary>
-    private int playerState;
+    public int playerState;
 
     void Awake()
     {
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 position = transform.position;
         Vector2 dir = Vector2.down;
 
-        Debug.DrawRay(position, dir, Color.green);
+        Debug.DrawRay(position, dir * groundCheckRadius, Color.green);
         RaycastHit2D hit = Physics2D.Raycast(position, dir, groundCheckRadius, ground);
         if (hit.collider != null)
         {

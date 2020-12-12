@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
-    private float bulletDmg = 1f;
+    private int bulletDmg = 1;
 
     private Rigidbody2D rb;
 
@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("hit enemy");
-            // do something
+            collision.GetComponent<EnemyType>().MinusEnemyHP(bulletDmg);
         }
         Destroy(gameObject);
     }
