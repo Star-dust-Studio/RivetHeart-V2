@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyType : MonoBehaviour
 {
-    public int health;
+    public float health;
+    public float hitDmg;
     public float moveSpeed;
 
     public Transform spawnPoint;
@@ -12,13 +13,12 @@ public class EnemyType : MonoBehaviour
     private int currentPoint = 0;
     private float radius = 1f;
 
-    public static bool isFacingRight = true;
-
-    public LayerMask player;
-    public float playerCheckRadius = 1.0f;
+    private bool isFacingRight = true;
+    private Rigidbody2D rb;
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         transform.position = spawnPoint.position;
     }
 
@@ -49,15 +49,5 @@ public class EnemyType : MonoBehaviour
         isFacingRight = !isFacingRight;
 
         transform.Rotate(0f, 180f, 0f);
-    }
-
-    public void MinusEnemyHP(int value)
-    {
-        health -= value;
-        Debug.Log("enemy hp: " + health);
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }
