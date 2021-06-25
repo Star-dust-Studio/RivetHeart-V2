@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Shooter playerShooter;
+
     private SpriteRenderer playerSprite;
     private Rigidbody2D rBody;
     private Animator animator;
 
+    private bool isFacingRight = true;
     private float horizontalInput;
     public float speed = 1f;
     private float jumpInput;
@@ -24,37 +27,23 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 1.0f;
     public LayerMask ground;
 
+    /// <summary>
+    /// 0 = allow all movements, 1 = restrict hook, 2 = restrict all movements
+    /// </summary>
+    public int playerState;
+
     void Awake()
     {
+        Time.timeScale = 1; // spaghetti
         playerSprite = GetComponent<SpriteRenderer>();
         rBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
-
-    bool IsGrounded()
-    {
-        Vector2 position = transform.position;
-        Vector2 dir = Vector2.down;
-
-        Debug.DrawRay(position, dir, Color.green);
-        RaycastHit2D hit = Physics2D.Raycast(position, dir, groundCheckRadius, ground);
-        if (hit.collider != null)
-        {
-            return true;
-        }
-
-        return false;
+        playerShooter = GetComponent<Shooter>();
     }
 
     void Update()
     {
-        //jumpInput = Input.GetAxis("Jump");
         horizontalInput = Input.GetAxis("Horizontal");
-        //var halfHeight = transform.GetComponent<SpriteRenderer>().bounds.extents.y;
-        //groundCheck = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - halfHeight - 0.04f), Vector2.down, 0.025f);
-        //isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, ground);
-        //horizontalInput = Input.GetAxis("Horizontal");
-
 
         if (IsGrounded())
         {
@@ -64,92 +53,88 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            Debug.Log("jump");
             isJumping = true;
-            //animator.SetTrigger("Jump");
             animator.SetBool("IsJumping", true);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            //animator.SetTrigger("Shoot");
+            playerShooter.Shoot();
         }
     }
 
     void FixedUpdate()
     {
-        rBody.velocity = new Vector2(horizontalInput * speed, rBody.velocity.y);
-
-        playerSprite.flipX = horizontalInput < 0f;
-
-        //if (horizontalInput < 0f || horizontalInput > 0f)
-        //{
-            //animator.SetFloat("Velocity", Mathf.Abs(horizontalInput));
-
-
-        //if (isJumping)
-        //{
-        //    rBody.AddForce(new Vector2(0f, jumpSpeed * 10));
-        //    isJumping = false;
-        //}
-
-        //if (isSwinging)
-        //    {
-        //        //animator.SetBool("IsSwinging", true);
-
-        //        // Get normalized direction vector from player to the hook point
-        //        var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
-
-        //        // Inverse the direction to get a perpendicular direction
-        //        Vector2 perpendicularDirection;
-        //        if (horizontalInput < 0)
-        //        {
-        //            perpendicularDirection = new Vector2(-playerToHookDirection.y, playerToHookDirection.x);
-        //            var leftPerpPos = (Vector2)transform.position - perpendicularDirection * -2f;
-        //            Debug.DrawLine(transform.position, leftPerpPos, Color.green, 0f);
-        //        }
-        //        else
-        //        {
-        //            perpendicularDirection = new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
-        //            var rightPerpPos = (Vector2)transform.position + perpendicularDirection * 2f;
-        //            Debug.DrawLine(transform.position, rightPerpPos, Color.green, 0f);
-        //        }
-
-        //        var force = perpendicularDirection * swingForce;
-        //        rBody.AddForce(force, ForceMode2D.Force);
-        //    }
-        //    else
-        //    {
-        //        //animator.SetBool("IsSwinging", false);
-        //        if (groundCheck)
-        //        //if (isJumping)
-        //        {
-        //        //rBody.AddForce(new Vector2(0f, jumpSpeed));
-        //        //isJumping = false;
-
-        //        var groundForce = speed * 2f;
-        //        rBody.AddForce(new Vector2((horizontalInput * groundForce - rBody.velocity.x) * groundForce, 0));
-        //        rBody.velocity = new Vector2(rBody.velocity.x, rBody.velocity.y);
-        //        //isJumping = false;
-        //        }
-        //    }
-
-        //}
-        //else
-        //{
-        //    //animator.SetBool("IsSwinging", false);
-        //    animator.SetFloat("Velocity", 0f);
-        //}
-
-        if (!isSwinging)
+        if (horizontalInput < 0f || horizontalInput > 0f)
         {
-            //if (!groundCheck) return;
-
-            //isJumping = jumpInput > 0f;
-            if (isJumping)
+            if (isFacingRight == false && horizontalInput > 0)
             {
-                //isGrounded = false;
-                rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
-                //rBody.AddForce(new Vector2(0f, jumpSpeed));
-                isJumping = false;
+                FlipCharacter();
+            }
+            else if (isFacingRight == true && horizontalInput < 0)
+            {
+                FlipCharacter();
+            }
+
+            if (isSwinging)
+            {
+                //animator.SetBool("IsSwinging", true);
+
+                // Get normalized direction vector from player to the hook point
+                var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
+
+                // Inverse the direction to get a perpendicular direction
+                Vector2 perpendicularDirection;
+                if (horizontalInput < 0)
+                {
+                    perpendicularDirection = new Vector2(-playerToHookDirection.y, playerToHookDirection.x);
+                    var leftPerpPos = (Vector2)transform.position - perpendicularDirection * -2f;
+                    Debug.DrawLine(transform.position, leftPerpPos, Color.green, 0f);
+                }
+                else
+                {
+                    perpendicularDirection = new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
+                    var rightPerpPos = (Vector2)transform.position + perpendicularDirection * 2f;
+                    Debug.DrawLine(transform.position, rightPerpPos, Color.green, 0f);
+                }
+
+                var force = perpendicularDirection * swingForce;
+                rBody.AddForce(force, ForceMode2D.Force);
             }
         }
 
+        if (!isSwinging)
+        {
+            rBody.velocity = new Vector2(horizontalInput * speed, rBody.velocity.y);
 
+            if (isJumping)
+            {
+                rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
+                isJumping = false;
+            }
+        }
+    }
+
+    private bool IsGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 dir = Vector2.down;
+
+        Debug.DrawRay(position, dir * groundCheckRadius, Color.green);
+        RaycastHit2D hit = Physics2D.Raycast(position, dir, groundCheckRadius, ground);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    private void FlipCharacter()
+    {
+        isFacingRight = !isFacingRight;
+
+        transform.Rotate(0f, 180f, 0f);
     }
 }
