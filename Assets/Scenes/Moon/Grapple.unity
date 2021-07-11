@@ -1248,7 +1248,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  ropeProgressionSpeed: 6.7
+  ropeProgressionSpeed: 5
   isGrappling: 1
 --- !u!114 &1563437972
 MonoBehaviour:
@@ -1271,13 +1271,13 @@ MonoBehaviour:
   firePoint: {fileID: 1170351174}
   m_springJoint2D: {fileID: 1713823878}
   m_rigidbody: {fileID: 1713823879}
-  rotateOverTime: 1
+  rotateOverTime: 0
   rotationSpeed: 15
   hasMaxDistance: 1
   maxDistance: 5
   launchToPoint: 1
   launchType: 1
-  launchSpeed: 1.5
+  launchSpeed: 1.2
   autoConfigureDistance: 0
   targetDistance: 2
   targetFrequency: 1
