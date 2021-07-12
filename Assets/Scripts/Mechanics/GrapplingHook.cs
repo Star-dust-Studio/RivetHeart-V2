@@ -198,6 +198,7 @@ public class GrapplingHook : MonoBehaviour
     public LayerMask ropeLayerMask;
     public float climbSpeed = 3f;
     public GameObject ropeHingeAnchor;
+    public GameObject grappleGun;
     public DistanceJoint2D ropeJoint;
     public Transform crosshair;
     public SpriteRenderer crosshairSprite;
@@ -215,7 +216,7 @@ public class GrapplingHook : MonoBehaviour
     void Awake()
     {
         ropeJoint.enabled = false;
-        playerPosition = transform.position;
+        playerPosition = grappleGun.transform.position;
         ropeHingeAnchorRb = ropeHingeAnchor.GetComponent<Rigidbody2D>();
         ropeHingeAnchorSprite = ropeHingeAnchor.GetComponent<SpriteRenderer>();
     }
@@ -249,7 +250,7 @@ public class GrapplingHook : MonoBehaviour
         }
 
         var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
-        playerPosition = transform.position;
+        playerPosition = grappleGun.transform.position;
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -294,7 +295,7 @@ public class GrapplingHook : MonoBehaviour
                 if (!ropePositions.Contains(hit.point))
                 {
                     // Jump slightly to distance the player a little from the ground after grappling to something.
-                    transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 2f), ForceMode2D.Impulse);
+                    transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 3f), ForceMode2D.Impulse);
                     ropePositions.Add(hit.point);
                     //wrapPointsLookup.Add(hit.point, 0);
                     ropeJoint.distance = Vector2.Distance(playerPosition, hit.point);
@@ -325,8 +326,8 @@ public class GrapplingHook : MonoBehaviour
         ropeAttached = false;
         playerMovement.isSwinging = false;
         ropeRenderer.positionCount = 2;
-        ropeRenderer.SetPosition(0, transform.position);
-        ropeRenderer.SetPosition(1, transform.position);
+        ropeRenderer.SetPosition(0, playerPosition);
+        ropeRenderer.SetPosition(1, playerPosition);
         ropePositions.Clear();
         //wrapPointsLookup.Clear();
         ropeHingeAnchorSprite.enabled = false;
@@ -392,7 +393,7 @@ public class GrapplingHook : MonoBehaviour
                             ropeHingeAnchorRb.transform.position = ropePosition;
                             if (!distanceSet)
                             {
-                                ropeJoint.distance = Vector2.Distance(transform.position, ropePosition);
+                                ropeJoint.distance = Vector2.Distance(playerPosition, ropePosition);
                                 distanceSet = true;
                             }
                         }
@@ -402,7 +403,7 @@ public class GrapplingHook : MonoBehaviour
                             ropeHingeAnchorRb.transform.position = ropePosition;
                             if (!distanceSet)
                             {
-                                ropeJoint.distance = Vector2.Distance(transform.position, ropePosition);
+                                ropeJoint.distance = Vector2.Distance(playerPosition, ropePosition);
                                 distanceSet = true;
                             }
                         }
@@ -414,7 +415,7 @@ public class GrapplingHook : MonoBehaviour
                         ropeHingeAnchorRb.transform.position = ropePosition;
                         if (!distanceSet)
                         {
-                            ropeJoint.distance = Vector2.Distance(transform.position, ropePosition);
+                            ropeJoint.distance = Vector2.Distance(playerPosition, ropePosition);
                             distanceSet = true;
                         }
                     }
@@ -422,7 +423,7 @@ public class GrapplingHook : MonoBehaviour
                 else
                 {
                     // Player position
-                    ropeRenderer.SetPosition(i, transform.position);
+                    ropeRenderer.SetPosition(i, playerPosition);
                 }
             }
         }
