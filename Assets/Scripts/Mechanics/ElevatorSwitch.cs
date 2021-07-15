@@ -23,7 +23,7 @@ public class ElevatorSwitch : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("change floorrrr");
-                elevator.ChangeFloor(1);
+                //elevator.ChangeFloor(1);
             }
         }
     }
