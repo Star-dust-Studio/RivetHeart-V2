@@ -7,9 +7,14 @@ public class ElevatorSwitch : MonoBehaviour
 {
     public Elevator elevator;
     public GameObject interactSprite;
-    [SerializeField] private int floorInput;
+    //[SerializeField] private int floorInput;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Start()
+    {
+        interactSprite.SetActive(false);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -17,7 +22,8 @@ public class ElevatorSwitch : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                elevator.ChangeFloor(floorInput);
+                Debug.Log("change floorrrr");
+                //elevator.ChangeFloor(1);
             }
         }
     }

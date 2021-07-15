@@ -11,7 +11,6 @@ public class UIController : MonoBehaviour
     public Button map;
     public Button inventory;
     public Button descriptionBackground;
-    public TextMeshProUGUI testText;
 
     ///[SerializeField]
     private bool paused;
@@ -22,7 +21,6 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        testText.text = "testing";
         paused = false;
         openmap = false;
         openInventory = false;
@@ -37,11 +35,13 @@ public class UIController : MonoBehaviour
             if (!paused)
             {
                 paused = true;
+                Time.timeScale = 0;
                 DisplayButtonPause();
             }
             else
             {
                 paused = false;
+                Time.timeScale = 1;
                 HideButtonPause();
             }
         }
@@ -118,17 +118,17 @@ public class UIController : MonoBehaviour
 
     public void ButtonQuitToMenu()    //quit to menu
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 
     public void ButtonStart()
     {
-        SceneManager.LoadScene(1);  //load the scene, the scene(1) is manage from unity.
+        SceneManager.LoadScene("MainGame");  //load the scene, the scene(1) is manage from unity.
     }
 
     public void ButtonCredit()    //quit to menu
     {
-        SceneManager.LoadScene(3); //load the scene, the scene(1) is manage from unity.
+        SceneManager.LoadScene("Credit"); //load the scene, the scene(1) is manage from unity.
     }
 
     public void ButtonQuitGame()    //quit game
