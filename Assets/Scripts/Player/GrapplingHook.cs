@@ -65,6 +65,8 @@ public class GrapplingHook : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            Cursor.visible = true;
+
             if (!ropeAttached)
             {
                 SetCrosshairPosition(aimAngle);
@@ -82,6 +84,7 @@ public class GrapplingHook : MonoBehaviour
         }
         else
         {
+            Cursor.visible = false;
             ResetRope();
             crosshairSprite.enabled = false;
         }

@@ -63,6 +63,7 @@ public class SlingGun : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            Cursor.visible = true;
             crosshairSprite.enabled = true;
 
             if (Input.GetKeyDown(KeyCode.Mouse1))
@@ -110,6 +111,7 @@ public class SlingGun : MonoBehaviour
         }
         else
         {
+            Cursor.visible = false;
             crosshairSprite.enabled = false;
         }
     }

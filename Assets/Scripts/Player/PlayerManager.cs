@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager Instance { get; private set; }
+    public static PlayerManager instance { get; private set; }
 
     [Header("Weapon & Tool")]
-    public GrapplingHook GrapplingHookScript;
-    public bool SlingGunObtained = false;
-    public GameObject SlingGun;
-    public SlingGun SlingGunScript;
-    public SlingRope SlingRopeScript;
-    public SpringJoint2D SpringJoint2D;
+    public GrapplingHook grapplingHookScript;
+    public bool slingGunObtained = false;
+    public GameObject slingGun;
+    public SlingGun slingGunScript;
+    public SlingRope slingRopeScript;
+    public SpringJoint2D springJoint2D;
 
     [Header("Info Tracker")]
-    public int HP = 5;
+    public int hp = 5;
 
     public enum Tool
     {
@@ -25,13 +25,14 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
         {
-            Instance = this;
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
     }
 
@@ -56,7 +57,7 @@ public class PlayerManager : MonoBehaviour
 
     public void UnlockSlingshot()
     {
-        SlingGunObtained = true;
+        slingGunObtained = true;
     }
 
     public void SetToolType(Tool toolType)
@@ -65,20 +66,20 @@ public class PlayerManager : MonoBehaviour
         {
             case Tool.GRAPPLINGHOOK:
                 {
-                    GrapplingHookScript.enabled = true;
-                    GrapplingHookScript.ResetRope();
-                    SlingGun.SetActive(false);
-                    SlingGunScript.enabled = false;
-                    SlingRopeScript.enabled = false;
-                    SpringJoint2D.enabled = false;
+                    grapplingHookScript.enabled = true;
+                    grapplingHookScript.ResetRope();
+                    slingGun.SetActive(false);
+                    slingGunScript.enabled = false;
+                    slingRopeScript.enabled = false;
+                    springJoint2D.enabled = false;
                     break;
                 }
             case Tool.SLINGGUN:
                 {
-                    GrapplingHookScript.enabled = false;
-                    GrapplingHookScript.ResetRope();
-                    SlingGun.SetActive(true);
-                    SlingGunScript.enabled = true;
+                    grapplingHookScript.enabled = false;
+                    grapplingHookScript.ResetRope();
+                    slingGun.SetActive(true);
+                    slingGunScript.enabled = true;
                     break;
                 }
             default:
