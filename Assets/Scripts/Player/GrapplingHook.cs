@@ -6,6 +6,7 @@ using System.Linq;
 public class GrapplingHook : MonoBehaviour
 {
     public LineRenderer ropeRenderer;
+    public LineRenderer previewRopeRenderer;
     public LayerMask ropeLayerMask;
     public float climbSpeed = 3f;
     public GameObject ropeHingeAnchor;
@@ -65,6 +66,7 @@ public class GrapplingHook : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            ShowRopeCast(aimDirection);
             Cursor.visible = true;
 
             if (!ropeAttached)
@@ -87,6 +89,29 @@ public class GrapplingHook : MonoBehaviour
             Cursor.visible = false;
             ResetRope();
             crosshairSprite.enabled = false;
+            previewRopeRenderer.enabled = false;
+        }
+    }
+
+    private void ShowRopeCast(Vector2 aimDirection)
+    {
+        if (ropeAttached)
+        {
+            previewRopeRenderer.enabled = false;
+            return;
+        }
+
+        var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
+
+        if (hit.collider != null)
+        {
+            previewRopeRenderer.enabled = true;
+            previewRopeRenderer.SetPosition(0, playerPosition);
+            previewRopeRenderer.SetPosition(1, hit.point);
+        }
+        else
+        {
+            previewRopeRenderer.enabled = false;
         }
     }
 
@@ -100,6 +125,7 @@ public class GrapplingHook : MonoBehaviour
         {
             if (ropeAttached) return;
             ropeRenderer.enabled = true;
+            previewRopeRenderer.enabled = false;
 
             var hit = Physics2D.Raycast(playerPosition, aimDirection, ropeMaxCastDistance, ropeLayerMask);
             Debug.Log(hit.point);

@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Info Tracker")]
     public int hp = 5;
+    public Transform playerPosition;
 
     public enum Tool
     {
@@ -38,6 +39,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        playerPosition = GetComponent<Transform>();
+
         SetToolType(Tool.GRAPPLINGHOOK);
     }
 
@@ -87,5 +90,10 @@ public class PlayerManager : MonoBehaviour
                     break;
                 }
         }
+    }
+
+    public void MinusHP(int damage)
+    {
+        hp -= damage;
     }
 }
