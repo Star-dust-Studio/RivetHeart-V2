@@ -7,33 +7,46 @@ public class Elevator : MonoBehaviour
     public Transform[] floor;
     private int currentFloor;
     private float moveSpeed = 0.5f;
+    [SerializeField]
+    private GameObject elevatorBorder;
+    private bool elevatorEngaged = false;
 
     // Start is called before the first frame update
     void Start()
     {
         currentFloor = 0;
         transform.position = floor[currentFloor].position;
+        elevatorBorder.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (elevatorEngaged)
         {
-            ChangeFloor(1);
+            ChangeFloor();
         }
     }
 
-    public void ChangeFloor(int selection)
+    [ContextMenu("Change Floor")]
+    public void EngageElevator()
     {
-        Debug.Log("change floor");
+        elevatorEngaged = true;
+        elevatorBorder.SetActive(true);
+    }
+
+    public void ChangeFloor()
+    {
+        int selection = 1;
         if (transform.position.y < floor[currentFloor + selection].transform.position.y)
         {
             //transform.position = Vector2.MoveTowards(transform.position, floor[currentFloor + selection].transform.position, Time.deltaTime * moveSpeed);
             //transform.Translate(Vector3.up * Time.deltaTime);
-            transform.Translate(0, Time.deltaTime, 0, Space.World);
+            transform.Translate(0, Time.deltaTime, 0, Space.Self);
         }
-        //transform.Translate(floor[currentFloor + selection].position, Space.World);
-        //transform.Translate(0, 30, Time.deltaTime * moveSpeed);
-        //transform.position = Vector2.MoveTowards(transform.position, floor[currentFloor + selection].transform.position, Time.deltaTime * moveSpeed);
+        else if (transform.position.y >= floor[currentFloor + selection].transform.position.y)
+        {
+            elevatorEngaged = false;
+            elevatorBorder.SetActive(false);
+        }
     }
 }
