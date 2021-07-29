@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6501037650235368917}
   - component: {fileID: 4979126594792663864}
-  - component: {fileID: 9109557796792807960}
+  - component: {fileID: 9218714190433488634}
   m_Layer: 8
   m_Name: LowH_InCornerWall2
   m_TagString: Untagged
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &9109557796792807960
-BoxCollider2D:
+--- !u!60 &9218714190433488634
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,6 +105,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.56, y: 2.56}
+      - {x: -2.56, y: -2.56}
+      - {x: 2.56, y: -2.56}
+      - {x: 2.56, y: 2.56}
