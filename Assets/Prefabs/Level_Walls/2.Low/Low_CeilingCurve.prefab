@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 553152911296962379}
   - component: {fileID: 5294134611097667785}
-  - component: {fileID: 8745422639686946217}
-  m_Layer: 0
+  - component: {fileID: -7485978066228831248}
+  m_Layer: 8
   m_Name: Low_CeilingCurve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1168175199
+  m_SortingLayerID: 876002347
   m_SortingLayer: 6
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: b5489686ad14b1d4db5031be8ce79151, type: 3}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8745422639686946217
-BoxCollider2D:
+--- !u!60 &-7485978066228831248
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,6 +105,33 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.12, y: 5.12}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.32, y: -2.5}
+      - {x: 0.41, y: -2.49}
+      - {x: 0.48, y: -2.3799999}
+      - {x: 0.47, y: -1.5699999}
+      - {x: 0.44, y: -1.38}
+      - {x: 0.41, y: -1.3}
+      - {x: 0.44, y: -1.18}
+      - {x: 0.56, y: -0.98999995}
+      - {x: 0.61, y: -0.9}
+      - {x: 0.66999996, y: -0.78}
+      - {x: 0.95, y: -0.47}
+      - {x: 1.15, y: -0.38}
+      - {x: 1.3199999, y: -0.26999998}
+      - {x: 1.4599999, y: -0.099999994}
+      - {x: 1.51, y: -0.13}
+      - {x: 2.1, y: -0.14}
+      - {x: 2.3, y: -0.11}
+      - {x: 2.56, y: 0.02}
+      - {x: 2.56, y: 2.56}
+      - {x: -2.56, y: 2.56}
+      - {x: -2.56, y: -2.4199998}
+      - {x: -2.54, y: -2.45}
+      - {x: -2.37, y: -2.53}
+      - {x: -2.23, y: -2.56}
+      - {x: -1.43, y: -2.56}
+      - {x: -1.13, y: -2.5}
+      - {x: -0.91999996, y: -2.54}
+      - {x: -0.39, y: -2.53}

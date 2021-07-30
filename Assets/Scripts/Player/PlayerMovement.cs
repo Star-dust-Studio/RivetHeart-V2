@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     private Shooter playerShooter;
 
     private SpriteRenderer playerSprite;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public float swingForce = 4f;
     public Vector2 ropeHook;
     public bool isSwinging;
+
+    
 
     //public bool isGrounded;
     //public Transform groundCheck;
