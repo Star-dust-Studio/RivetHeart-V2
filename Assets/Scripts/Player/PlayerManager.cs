@@ -1,9 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum PlayerState
+{
+    ALIVE,
+    DEAD,
+    PAUSED
+}
 
 public class PlayerManager : MonoBehaviour
 {
+
+
+    public enum Tool
+    {
+        GRAPPLINGHOOK,
+        SLINGGUN
+    }
+
     public static PlayerManager instance { get; private set; }
 
     [Header("Weapon & Tool")]
@@ -17,12 +31,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Info Tracker")]
     public int hp = 5;
     public Transform playerPosition;
-
-    public enum Tool
-    {
-        GRAPPLINGHOOK,
-        SLINGGUN
-    }
+    public PlayerState playerState;
 
     private void Awake()
     {
@@ -90,6 +99,41 @@ public class PlayerManager : MonoBehaviour
                     break;
                 }
         }
+    }
+
+    /// <summary>
+    /// Mouse cursor visibility according to player state
+    /// </summary>
+    /// <param name="state"></param>
+    public void SetPlayerState(PlayerState state)
+    {
+        playerState = state;
+        switch (state)
+        {
+            case PlayerState.ALIVE:
+                {
+                    Time.timeScale = 1;
+                    Cursor.visible = true;
+                    break;
+                }
+            case PlayerState.DEAD:
+                {
+                    Cursor.visible = true;
+                    break;
+                }
+            case PlayerState.PAUSED:
+                {
+                    Time.timeScale = 0;
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+
     }
 
     public void MinusHP(int damage)

@@ -14,19 +14,22 @@ public class Shooter : MonoBehaviour
 
     private void Update()
     {
-        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20f));
-        var facingDirection = worldMousePosition - transform.position;
-        aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
-        if (aimAngle < 0f)
+        if (PlayerManager.instance.playerState == PlayerState.ALIVE)
         {
-            aimAngle = Mathf.PI * 2 + aimAngle;
-        }
-        
-        SetCrosshairPosition(aimAngle);
+            var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20f));
+            var facingDirection = worldMousePosition - transform.position;
+            aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
+            if (aimAngle < 0f)
+            {
+                aimAngle = Mathf.PI * 2 + aimAngle;
+            }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
+            SetCrosshairPosition(aimAngle);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
         }
     }
 
