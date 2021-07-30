@@ -16,6 +16,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("save");
             CheckpointManager.instance.SetCheckpoint(position);
         }
     }
