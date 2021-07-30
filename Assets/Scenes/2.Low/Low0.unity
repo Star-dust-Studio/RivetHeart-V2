@@ -60462,7 +60462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4db145205602114fa1b059c9c651bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7.5
+  speed: 7
   jumpSpeed: 12
   swingForce: 4
   ropeHook: {x: 0, y: 0}
@@ -60492,7 +60492,6 @@ MonoBehaviour:
   springJoint2D: {fileID: 1732869607}
   hp: 5
   playerPosition: {fileID: 0}
-  playerState: 0
 --- !u!50 &1732869617
 Rigidbody2D:
   serializedVersion: 4
