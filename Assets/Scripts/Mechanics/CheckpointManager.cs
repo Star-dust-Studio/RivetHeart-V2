@@ -6,8 +6,6 @@ public class CheckpointManager : MonoBehaviour
 {
     public static CheckpointManager instance { get; private set; }
 
-    [SerializeField]
-    private Transform spawnpoint;
     private Transform currentCheckpoint;
 
     private void Awake()
@@ -25,23 +23,15 @@ public class CheckpointManager : MonoBehaviour
 
     private void Start()
     {
-        if (currentCheckpoint != null)
-        {
-            Debug.Log("got checkpoint");
-            currentCheckpoint = GetComponent<Transform>();
-        }
-        else
-        {
-            Debug.Log("is null so set spawn");
-            currentCheckpoint = spawnpoint;
-        }
-        PlayerManager.instance.playerPosition.position = currentCheckpoint.position;
+        currentCheckpoint = GetComponent<Transform>();
+
+        PlayerManager.instance.playerPosition = currentCheckpoint;
     }
 
     public void SetCheckpoint(Transform checkpoint)
     {
         Debug.Log("checkpoint!");
-        currentCheckpoint.position = checkpoint.position;
+        currentCheckpoint = checkpoint;
     }
 
     [ContextMenu("Respawn")]
