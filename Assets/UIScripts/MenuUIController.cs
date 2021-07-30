@@ -43,13 +43,13 @@ public class MenuUIController : MonoBehaviour
         {
             if (!paused)
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                PlayerManager.instance.SetPlayerState(PlayerState.PAUSED);
                 paused = true;
                 DisplaypausePanel();
             }
             else
             {
+                PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
                 paused = false;
                 HidepausePanel();
             }

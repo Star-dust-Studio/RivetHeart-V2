@@ -27,85 +27,90 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 1.0f;
     public LayerMask ground;
 
-    /// <summary>
-    /// 0 = allow all movements, 1 = restrict hook, 2 = restrict all movements
-    /// </summary>
-    public int playerState;
-
     void Awake()
     {
-        Time.timeScale = 1; // spaghetti
         playerSprite = GetComponent<SpriteRenderer>();
         rBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerShooter = GetComponent<Shooter>();
     }
 
+    private void Start()
+    {
+        PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
+    }
+
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-
-        if (IsGrounded())
+        if (PlayerManager.instance.playerState == PlayerState.ALIVE)
         {
-            animator.SetFloat("Velocity", Mathf.Abs(horizontalInput));
-            animator.SetBool("IsJumping", false);
-        }
+            horizontalInput = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            isJumping = true;
-            animator.SetBool("IsJumping", true);
+            if (IsGrounded())
+            {
+                animator.SetFloat("Velocity", Mathf.Abs(horizontalInput));
+                animator.SetBool("IsJumping", false);
+            }
+
+            if (Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                isJumping = true;
+                animator.SetBool("IsJumping", true);
+            }
         }
     }
 
     void FixedUpdate()
     {
-        if (horizontalInput < 0f || horizontalInput > 0f)
+        if (PlayerManager.instance.playerState == PlayerState.ALIVE)
         {
-            if (isFacingRight == false && horizontalInput > 0)
+            if (horizontalInput < 0f || horizontalInput > 0f)
             {
-                FlipCharacter();
-            }
-            else if (isFacingRight == true && horizontalInput < 0)
-            {
-                FlipCharacter();
-            }
-
-            if (isSwinging)
-            {
-                //animator.SetBool("IsSwinging", true);
-
-                // Get normalized direction vector from player to the hook point
-                var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
-
-                // Inverse the direction to get a perpendicular direction
-                Vector2 perpendicularDirection;
-                if (horizontalInput < 0)
+                if (isFacingRight == false && horizontalInput > 0)
                 {
-                    perpendicularDirection = new Vector2(-playerToHookDirection.y, playerToHookDirection.x);
-                    var leftPerpPos = (Vector2)transform.position - perpendicularDirection * -2f;
-                    Debug.DrawLine(transform.position, leftPerpPos, Color.green, 0f);
+                    FlipCharacter();
                 }
-                else
+                else if (isFacingRight == true && horizontalInput < 0)
                 {
-                    perpendicularDirection = new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
-                    var rightPerpPos = (Vector2)transform.position + perpendicularDirection * 2f;
-                    Debug.DrawLine(transform.position, rightPerpPos, Color.green, 0f);
+                    FlipCharacter();
                 }
 
-                var force = perpendicularDirection * swingForce;
-                rBody.AddForce(force, ForceMode2D.Force);
+                if (isSwinging)
+                {
+                    //animator.SetBool("IsSwinging", true);
+
+                    // Get normalized direction vector from player to the hook point
+                    var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
+
+                    // Inverse the direction to get a perpendicular direction
+                    Vector2 perpendicularDirection;
+                    if (horizontalInput < 0)
+                    {
+                        perpendicularDirection = new Vector2(-playerToHookDirection.y, playerToHookDirection.x);
+                        var leftPerpPos = (Vector2)transform.position - perpendicularDirection * -2f;
+                        Debug.DrawLine(transform.position, leftPerpPos, Color.green, 0f);
+                    }
+                    else
+                    {
+                        perpendicularDirection = new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
+                        var rightPerpPos = (Vector2)transform.position + perpendicularDirection * 2f;
+                        Debug.DrawLine(transform.position, rightPerpPos, Color.green, 0f);
+                    }
+
+                    var force = perpendicularDirection * swingForce;
+                    rBody.AddForce(force, ForceMode2D.Force);
+                }
             }
-        }
 
-        if (!isSwinging)
-        {
-            rBody.velocity = new Vector2(horizontalInput * speed, rBody.velocity.y);
-
-            if (isJumping)
+            if (!isSwinging)
             {
-                rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
-                isJumping = false;
+                rBody.velocity = new Vector2(horizontalInput * speed, rBody.velocity.y);
+
+                if (isJumping)
+                {
+                    rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
+                    isJumping = false;
+                }
             }
         }
     }

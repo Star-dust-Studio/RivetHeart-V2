@@ -67,7 +67,7 @@ public class GrapplingHook : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             ShowRopeCast(aimDirection);
-            Cursor.visible = true;
+            //Cursor.visible = true;
 
             if (!ropeAttached)
             {
@@ -86,7 +86,7 @@ public class GrapplingHook : MonoBehaviour
         }
         else
         {
-            Cursor.visible = false;
+            //Cursor.visible = false;
             ResetRope();
             crosshairSprite.enabled = false;
             previewRopeRenderer.enabled = false;
