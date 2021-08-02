@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public string scenePassword;
 
     public static PlayerManager instance { get; private set; }
 
