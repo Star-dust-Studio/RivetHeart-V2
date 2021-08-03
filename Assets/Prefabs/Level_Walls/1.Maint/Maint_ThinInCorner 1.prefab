@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3386524942746013067}
   - component: {fileID: 3982474763228999330}
-  - component: {fileID: 311365335833655519}
+  - component: {fileID: 2432056848911002487}
   m_Layer: 0
   m_Name: Maint_ThinInCorner 1
   m_TagString: Untagged
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1168175199
-  m_SortingLayer: 0
+  m_SortingLayer: 5
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: fe2edde60b17d90438f5146c9850ad28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &311365335833655519
-PolygonCollider2D:
+--- !u!61 &2432056848911002487
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,9 +105,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -2.56, y: 2.56}
-      - {x: -2.56, y: -2.56}
-      - {x: 2.56, y: -2.56}
-      - {x: 2.56, y: 2.56}
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.12}
+  m_EdgeRadius: 0

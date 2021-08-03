@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978902566588617825}
   - component: {fileID: 8287304663029778575}
-  - component: {fileID: 7306378345831666573}
+  - component: {fileID: 8161058582948694367}
   m_Layer: 0
   m_Name: HighE_SideWalla
   m_TagString: Untagged
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1168175199
-  m_SortingLayer: 0
+  m_SortingLayer: 6
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: d9ba4243db5ee504f957c7de9f646da7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &7306378345831666573
-PolygonCollider2D:
+--- !u!61 &8161058582948694367
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,16 +105,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 2.28, y: -1.66}
-      - {x: 2.24, y: -1.62}
-      - {x: 2.52, y: 0.17999999}
-      - {x: 2.52, y: 2.33}
-      - {x: 2.44, y: 2.56}
-      - {x: -2.56, y: 2.56}
-      - {x: -2.56, y: -2.56}
-      - {x: 2.47, y: -2.56}
-      - {x: 2.5, y: -2.53}
-      - {x: 2.5, y: -2.07}
-      - {x: 2.46, y: -2.03}
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.12}
+  m_EdgeRadius: 0
