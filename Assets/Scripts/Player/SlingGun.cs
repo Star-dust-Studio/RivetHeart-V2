@@ -202,8 +202,8 @@ public class SlingGun : MonoBehaviour
     {
         if (firePoint != null && hasMaxDistance)
         {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(firePoint.position, maxDistance);
+            //Gizmos.color = Color.green;
+            //Gizmos.DrawWireSphere(firePoint.position, maxDistance);
         }
     }
 

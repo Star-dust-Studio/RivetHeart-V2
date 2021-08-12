@@ -10,8 +10,6 @@ public enum PlayerState
 
 public class PlayerManager : MonoBehaviour
 {
-
-
     public enum Tool
     {
         GRAPPLINGHOOK,

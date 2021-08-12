@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteract : MonoBehaviour
+public class PlayerInteract : MonoBehaviour, IPickup
 {
+    public InventoryManager inventory;
+
     [SerializeField]
     private float maxCastDistance = 1f;
     [SerializeField]
     private LayerMask layerMask;
-
-    private Rigidbody2D rb;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     private void FixedUpdate()
     {
@@ -33,5 +28,10 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PickUpItem(ScriptableObjectsHandler pickupSO)
+    {
+        inventory.AddNewItem(pickupSO);
     }
 }

@@ -12,7 +12,7 @@ public class EnemyType : MonoBehaviour
     private int currentPoint = 0;
     private float radius = 1f;
 
-    public static bool isFacingRight = true;
+    public static bool isFacingRight = false;
 
     public LayerMask player;
     public float playerCheckRadius = 1.0f;
