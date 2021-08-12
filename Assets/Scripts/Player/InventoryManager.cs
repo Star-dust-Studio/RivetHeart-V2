@@ -17,7 +17,6 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemSpriteList = new List<Sprite>();
         keyNumberText.text = "X " + keyNumber.ToString();
         UpdateInventory();
     }
