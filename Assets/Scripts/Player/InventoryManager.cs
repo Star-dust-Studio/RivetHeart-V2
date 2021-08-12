@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     public Sprite defaultSlotSprite;
     public TextMeshProUGUI keyNumberText;
     private int keyNumber = 0;
-    public ScriptableObjectsHandler keySO;
+    public ItemPickupSO keySO;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,6 @@ public class InventoryManager : MonoBehaviour
             for (int i = 0; i < itemArray.Length; i++)
             {
                 itemArray[i].sprite = defaultSlotSprite;
-                Debug.Log("how many time");
             }
         }
         else
@@ -40,18 +39,16 @@ public class InventoryManager : MonoBehaviour
                 if (i < itemSpriteList.Count)
                 {
                     itemArray[i].sprite = itemSpriteList[i];
-                    Debug.Log("new item");
                 }
                 else
                 {
                     itemArray[i].sprite = defaultSlotSprite;
-                    Debug.Log("default");
                 }
             }
         }
     }
 
-    public void AddNewItem(ScriptableObjectsHandler newSO)
+    public void AddNewItem(ItemPickupSO newSO)
     {
         if (newSO == keySO)
         {

@@ -19,7 +19,7 @@ public class EnemyType : MonoBehaviour
 
     public GameObject bulletPrefab;
     public Transform firepoint;
-    public float fireRate = 0.4f;
+    public float fireRate = 1f;
     private float bulletInterval;
 
     private void Start()

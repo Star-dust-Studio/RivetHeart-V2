@@ -30,7 +30,7 @@ public class PlayerInteract : MonoBehaviour, IPickup
         }
     }
 
-    public void PickUpItem(ScriptableObjectsHandler pickupSO)
+    public void PickUpItem(ItemPickupSO pickupSO)
     {
         inventory.AddNewItem(pickupSO);
     }

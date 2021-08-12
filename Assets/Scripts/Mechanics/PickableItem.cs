@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemPickup : MonoBehaviour
+public class PickableItem : MonoBehaviour
 {
-    public ScriptableObjectsHandler itemSO;
+    public ItemPickupSO itemSO;
 
     public void Execute()
     {
@@ -17,7 +17,7 @@ public class ItemPickup : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = itemSO.sprite;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         IPickup pickup = collision.gameObject.GetComponent<IPickup>();
 
