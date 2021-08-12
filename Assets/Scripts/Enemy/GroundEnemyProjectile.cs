@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderProjectiles : Projectiles
+public class GroundEnemyProjectile : Projectiles
 {
     private Rigidbody2D rb;
 
@@ -11,6 +11,6 @@ public class SpiderProjectiles : Projectiles
     {
         base.Start();
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.right * speed;
+        rb.velocity = -transform.right * speed;
     }
 }
