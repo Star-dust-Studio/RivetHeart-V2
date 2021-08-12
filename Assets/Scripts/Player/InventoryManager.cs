@@ -39,6 +39,7 @@ public class InventoryManager : MonoBehaviour
                 if (i < itemSpriteList.Count)
                 {
                     itemArray[i].sprite = itemSpriteList[i];
+                    Debug.Log("update item");
                 }
                 else
                 {
