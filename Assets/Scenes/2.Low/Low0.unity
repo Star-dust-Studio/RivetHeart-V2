@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -12415,6 +12415,8 @@ Transform:
   m_Children:
   - {fileID: 1247203487}
   - {fileID: 2072387704}
+  - {fileID: 1403237413}
+  - {fileID: 583206770}
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19405,6 +19407,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3259724594700544846, guid: 0833f54c884f66d4683ae60e7e6aaddb,
     type: 3}
   m_PrefabInstance: {fileID: 582285980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &583206769
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 357676319}
+    m_Modifications:
+    - target: {fileID: 5421340670461550604, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_Name
+      value: BegoniaEntrance (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550606, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: entrancePassword
+      value: Low0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -312.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -140.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.340597
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c93c13c02b2d150489edf0683648350c, type: 3}
+--- !u!4 &583206770 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+    type: 3}
+  m_PrefabInstance: {fileID: 583206769}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &583555269
 PrefabInstance:
@@ -35578,8 +35660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc5bf388d47adb4a9ee899a0667031a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Main00
-  newScenePassword: Main00
+  sceneName: Main05
+  newScenePassword: Main05.3
 --- !u!61 &1005057937
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38215,7 +38297,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7786942, y: 1}
+    m_SensorSize: {x: 1.7769231, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -43731,7 +43813,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550606, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: entrancePassword
-      value: Low0
+      value: Low0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -46987,8 +47069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebc5bf388d47adb4a9ee899a0667031a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Main00
-  newScenePassword: Main00.1
+  sceneName: Main04
+  newScenePassword: Main04.1
 --- !u!61 &1331170805
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48956,6 +49038,86 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 61643625495984223, guid: f88cb8f631da7da42b75071c3ce7c3f7,
     type: 3}
   m_PrefabInstance: {fileID: 1402724540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1403237412
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 357676319}
+    m_Modifications:
+    - target: {fileID: 5421340670461550604, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_Name
+      value: BegoniaEntrance (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550606, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: entrancePassword
+      value: Low0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -137
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 27.340597
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c93c13c02b2d150489edf0683648350c, type: 3}
+--- !u!4 &1403237413 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1403237412}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1405612732
 GameObject:
@@ -73919,7 +74081,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550606, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: entrancePassword
-      value: Main00.1
+      value: Low0
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}

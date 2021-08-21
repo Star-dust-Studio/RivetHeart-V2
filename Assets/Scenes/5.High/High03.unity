@@ -2119,7 +2119,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 126.973625, y: 32.20199, z: -189.02621}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1500116845}
+  - {fileID: 1499766927}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3985,6 +3987,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: sceneName
+      value: High02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: newScenePassword
+      value: high02.1
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -6088,6 +6100,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: sceneName
+      value: Capt_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: newScenePassword
+      value: capt00
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -13464,27 +13486,32 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 245892450}
     m_Modifications:
     - target: {fileID: 5421340670461550604, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_Name
       value: BegoniaEntrance (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550606, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: entrancePassword
+      value: high03.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -39.7
+      value: -166.67363
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: -27.501987
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 189.02621
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -13509,7 +13536,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -13528,32 +13555,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c93c13c02b2d150489edf0683648350c, type: 3}
+--- !u!4 &1499766927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1499766926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1500116844
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 245892450}
     m_Modifications:
     - target: {fileID: 5421340670461550604, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_Name
       value: BegoniaEntrance
       objectReference: {fileID: 0}
+    - target: {fileID: 5421340670461550606, guid: c93c13c02b2d150489edf0683648350c,
+        type: 3}
+      propertyPath: entrancePassword
+      value: high03
+      objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -62.8
+      value: -189.77362
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: -27.501987
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 189.02621
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -13578,7 +13616,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -13597,6 +13635,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c93c13c02b2d150489edf0683648350c, type: 3}
+--- !u!4 &1500116845 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500116844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1503305640
 PrefabInstance:
   m_ObjectHideFlags: 0
