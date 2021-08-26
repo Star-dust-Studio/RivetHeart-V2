@@ -11,11 +11,19 @@ public class LoadingScreenControl : MonoBehaviour
 
     private AsyncOperation operation;
     private Canvas BLoadingCanvas;
+    public static LoadingScreenControl instance { get; private set; }
 
     private void Awake()
     {
-        BLoadingCanvas = GetComponentInChildren<Canvas>(true);
-        DontDestroyOnLoad(gameObject);
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     public void LoadScene(string sceneName)
