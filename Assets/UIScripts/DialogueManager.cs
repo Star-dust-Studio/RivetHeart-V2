@@ -23,7 +23,6 @@ public class DialogueManager : MonoBehaviour
     private bool openDialogue;
     private bool interactTextAppear;
 
-
     void Start()
     {
         StartCoroutine(ShowText()); //for typewriter
@@ -62,8 +61,10 @@ public class DialogueManager : MonoBehaviour
             currentText = fullText.Substring(0, i);
             this.GetComponent<Text>().text = currentText;
             yield return new WaitForSeconds(delay);
+            
         }
     }
+
 
     public void ButtonCloseButton()    //Close dialogue
     {
@@ -96,6 +97,5 @@ public class DialogueManager : MonoBehaviour
             interactionText.SetActive(false);
             DialoguePanel.gameObject.SetActive(false);
         }
-
     }
 }
