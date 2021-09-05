@@ -94,6 +94,7 @@ public class DialogueManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactionText.SetActive(false);
+            DialoguePanel.gameObject.SetActive(false);
         }
 
     }
