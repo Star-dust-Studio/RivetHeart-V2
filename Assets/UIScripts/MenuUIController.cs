@@ -25,16 +25,20 @@ public class MenuUIController : MonoBehaviour
     public Button pausePanel;
     public Button InventoryPanel;
     public Button ContinueButton;
+    public Button MapPanel;
+
 
     ///[SerializeField]
     private bool paused;
     private bool openInventory;
+    private bool openMap;
 
     // Start is called before the first frame update
     void Start()
     {
         paused = false;
         openInventory = false;
+        openMap = false;
     }
 
 
@@ -74,6 +78,22 @@ public class MenuUIController : MonoBehaviour
                 HideInventoryPanel();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (!openMap)
+            {
+                PlayerManager.instance.SetPlayerState(PlayerState.PAUSED);
+                openMap = true;
+                DisplayMapPanel();
+            }
+            else
+            {
+                PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
+                openMap = false;
+                HideMapPanel();
+            }
+        }
     }
 
     public void DisplaypausePanel()
@@ -84,6 +104,18 @@ public class MenuUIController : MonoBehaviour
     public void HidepausePanel()
     {
         pausePanel.gameObject.SetActive(false);
+    }
+
+
+    public void DisplayMapPanel()
+    {
+        MapPanel.gameObject.SetActive(true);
+    }
+
+
+    public void HideMapPanel()
+    {
+        MapPanel.gameObject.SetActive(false);
     }
 
 
