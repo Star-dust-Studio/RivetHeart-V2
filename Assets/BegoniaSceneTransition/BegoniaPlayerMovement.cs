@@ -30,4 +30,9 @@ public class BegoniaPlayerMovement : MonoBehaviour
     // {
     //    transform.position = startingPosition.initialValue;  
     //}
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Trigger");
+    }
 }

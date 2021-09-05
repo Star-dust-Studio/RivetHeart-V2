@@ -32,6 +32,7 @@ public class MenuUIController : MonoBehaviour
     private bool paused;
     private bool openInventory;
     private bool openMap;
+    private bool openDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class MenuUIController : MonoBehaviour
         paused = false;
         openInventory = false;
         openMap = false;
+        openDialogue = false;
     }
 
 
