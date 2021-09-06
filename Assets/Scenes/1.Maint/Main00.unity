@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14065,8 +14065,8 @@ Transform:
   m_LocalPosition: {x: -35.07085, y: 121.93934, z: -118.09673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1529254316}
   - {fileID: 1059774120}
+  - {fileID: 1529254316}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19171,12 +19171,12 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.9
+      value: 79.5
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -36
+      value: 20.9
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -19206,7 +19206,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -19226,12 +19226,22 @@ PrefabInstance:
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: sceneName
-      value: Main01
+      value: High01
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: newScenePassword
-      value: Main01
+      value: M0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5888176
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 24.914566
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836047, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -26941,12 +26951,12 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.5
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -106.8
+      value: -35.33
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -26976,7 +26986,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -26996,12 +27006,22 @@ PrefabInstance:
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: sceneName
-      value: High00
+      value: Main01
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: newScenePassword
-      value: high00
+      value: M0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 3.354229
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10.516487
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836047, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}

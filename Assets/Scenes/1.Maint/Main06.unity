@@ -5521,7 +5521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &681538712
 AudioListener:
   m_ObjectHideFlags: 0
@@ -14355,7 +14355,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -129.7
+      value: -117.35
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -14415,7 +14415,17 @@ PrefabInstance:
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: newScenePassword
-      value: Main05.1
+      value: M6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 3.1561995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 12.760508
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836047, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}

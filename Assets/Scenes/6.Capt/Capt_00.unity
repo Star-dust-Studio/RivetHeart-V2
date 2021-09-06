@@ -652,91 +652,6 @@ Transform:
   m_Father: {fileID: 1654941182}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &114270541
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1926108394}
-    m_Modifications:
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -71.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -49.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 43.98813
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: sceneName
-      value: Capt_04
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: newScenePassword
-      value: capt04
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836047, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_Name
-      value: Begonia Exit
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef1f3d5233cb31048aa4d1919c144482, type: 3}
---- !u!4 &114270542 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-    type: 3}
-  m_PrefabInstance: {fileID: 114270541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &115173735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7319,12 +7234,12 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.4
+      value: 70.2
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -49.7
+      value: -48
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -7379,7 +7294,17 @@ PrefabInstance:
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: newScenePassword
-      value: capt01
+      value: CP0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.117503166
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 14.219969
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836047, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -11698,9 +11623,7 @@ Transform:
   m_LocalPosition: {x: 25.4501, y: 46.692223, z: -243.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 114270542}
   - {fileID: 1222174665}
-  - {fileID: 2124252563}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12401,101 +12324,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2818668107772746234, guid: 3589466fac2b17c448305a0b97ddf0f7,
     type: 3}
   m_PrefabInstance: {fileID: 2120242396}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2124252562
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1926108394}
-    m_Modifications:
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 43.98813
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: sceneName
-      value: High03
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: newScenePassword
-      value: high03.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.73436356
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 17.193832
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836047, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_Name
-      value: Begonia Exit (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef1f3d5233cb31048aa4d1919c144482, type: 3}
---- !u!4 &2124252563 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-    type: 3}
-  m_PrefabInstance: {fileID: 2124252562}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2129545060
 GameObject:

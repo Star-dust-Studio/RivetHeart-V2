@@ -3507,101 +3507,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &387587372
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1923236561}
-    m_Modifications:
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -21.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 30.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 43.98813
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: sceneName
-      value: Green_00
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: newScenePassword
-      value: green00
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 3.5444813
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 18.866821
-      objectReference: {fileID: 0}
-    - target: {fileID: 2566211342757836047, guid: ef1f3d5233cb31048aa4d1919c144482,
-        type: 3}
-      propertyPath: m_Name
-      value: Begonia Exit (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ef1f3d5233cb31048aa4d1919c144482, type: 3}
---- !u!4 &387587373 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
-    type: 3}
-  m_PrefabInstance: {fileID: 387587372}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &399671771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9733,13 +9638,13 @@ Transform:
   - {fileID: 1053691029}
   - {fileID: 1923741126}
   - {fileID: 553164432}
-  - {fileID: 515206430}
   - {fileID: 1440382688}
+  - {fileID: 1712856296}
+  - {fileID: 515206430}
   - {fileID: 22048308}
   - {fileID: 1984870547}
   - {fileID: 944960676}
   - {fileID: 1209625279}
-  - {fileID: 1712856296}
   - {fileID: 13834493}
   - {fileID: 2137526389}
   - {fileID: 1121459341}
@@ -9773,6 +9678,7 @@ Transform:
   - {fileID: 660644837}
   - {fileID: 1538014819}
   - {fileID: 354808421}
+  - {fileID: 1470584067}
   - {fileID: 408970814}
   - {fileID: 1928614866}
   - {fileID: 449808559}
@@ -9782,7 +9688,6 @@ Transform:
   - {fileID: 1970163691}
   - {fileID: 1685323950}
   - {fileID: 642542136}
-  - {fileID: 1470584067}
   - {fileID: 169974316}
   - {fileID: 791448469}
   - {fileID: 400848350}
@@ -12160,7 +12065,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.6
+      value: 69
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -12220,7 +12125,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: newScenePassword
-      value: green02.1
+      value: G1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -12910,7 +12815,7 @@ Transform:
   m_LocalScale: {x: 6.511169, y: 1.4882802, z: 1}
   m_Children: []
   m_Father: {fileID: 1052211064}
-  m_RootOrder: 66
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1440382689
 SpriteRenderer:
@@ -13072,7 +12977,7 @@ Transform:
   m_LocalScale: {x: 9.789057, y: 32.25, z: 1}
   m_Children: []
   m_Father: {fileID: 1052211064}
-  m_RootOrder: 114
+  m_RootOrder: 105
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1470584068
 SpriteRenderer:
@@ -14772,7 +14677,7 @@ Transform:
   m_LocalScale: {x: 6.511169, y: 1.4882802, z: 1}
   m_Children: []
   m_Father: {fileID: 1052211064}
-  m_RootOrder: 71
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1712856297
 SpriteRenderer:
@@ -15427,7 +15332,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.6
+      value: -30.4
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -15482,12 +15387,12 @@ PrefabInstance:
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: sceneName
-      value: Green_06
+      value: Green_00
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836044, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: newScenePassword
-      value: green06.1
+      value: G1
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836045, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -16398,7 +16303,6 @@ Transform:
   m_Children:
   - {fileID: 1325301561}
   - {fileID: 1757558880}
-  - {fileID: 387587373}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
