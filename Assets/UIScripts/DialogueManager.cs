@@ -123,6 +123,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayDialoguePanel()
     {
         DialoguePanel.gameObject.SetActive(true);
+        //index = 0;
     }
 
     public void HideDialoguePanel()
@@ -135,6 +136,7 @@ public class DialogueManager : MonoBehaviour
         if (player.gameObject.tag == "Player")
         {
             interactionText.SetActive(true);
+            //index = 0;
         }
     }
 
