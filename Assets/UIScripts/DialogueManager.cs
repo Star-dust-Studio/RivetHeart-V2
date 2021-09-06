@@ -38,7 +38,7 @@ public class DialogueManager : MonoBehaviour
         openDialogue = false;
         interactTextAppear = false;
 
-        //for next dialogue
+        //Play from the top
         index = 0;
     }
 
@@ -75,6 +75,19 @@ public class DialogueManager : MonoBehaviour
 
             Debug.Log(index);
         }
+
+        //if (index >= 10)
+        //    index = 10;
+
+        //if (index < 0)
+        //    index = 0;
+
+
+
+        //if (index == 0)
+        //{
+        //    Dialogue[0].gameObject.SetActive(true);
+        //}
 
         //if (Input.GetKeyDown(KeyCode.UpArrow))
         //{
