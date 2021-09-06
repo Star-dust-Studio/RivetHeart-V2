@@ -23,6 +23,11 @@ public class DialogueManager : MonoBehaviour
     private bool openDialogue;
     private bool interactTextAppear;
 
+    //for next dialogue
+    public GameObject[] Dialogue;
+    int index;
+
+
     void Start()
     {
         StartCoroutine(ShowText()); //for typewriter
@@ -32,6 +37,9 @@ public class DialogueManager : MonoBehaviour
 
         openDialogue = false;
         interactTextAppear = false;
+
+        //for next dialogue
+        index = 0;
     }
 
 
@@ -41,17 +49,44 @@ public class DialogueManager : MonoBehaviour
         {
             if (!interactTextAppear)
             {
+                //PlayerManager.instance.SetPlayerState(PlayerState.PAUSED);
                 interactTextAppear = true;
                 openDialogue = true;
                 DisplayDialoguePanel();
             }
             else
             {
+                //PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
                 interactTextAppear = false;
                 openDialogue = false;
                 HideDialoguePanel();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            index += 1;
+
+            for (int i = 0; i < Dialogue.Length; i++)
+            {
+                Dialogue[i].gameObject.SetActive(false);
+                Dialogue[index].gameObject.SetActive(true);
+            }
+
+            Debug.Log(index);
+        }
+
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    index -= 1;
+
+        //    for (int i = 0; i < Dialogue.Length; i++)
+        //    {
+        //        Dialogue[i].gameObject.SetActive(false);
+        //        Dialogue[index].gameObject.SetActive(true);
+        //    }
+        //    Debug.Log(index);
+        //}
     }
 
     IEnumerator ShowText()
