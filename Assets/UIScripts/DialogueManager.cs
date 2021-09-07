@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public string fullText;
     private string currentText = "";
 
-    
+
     public Button CloseButton;
     public Button DialoguePanel;
     public Button InteractionText;
@@ -109,7 +109,7 @@ public class DialogueManager : MonoBehaviour
             currentText = fullText.Substring(0, i);
             this.GetComponent<Text>().text = currentText;
             yield return new WaitForSeconds(delay);
-            
+
         }
     }
 

@@ -23,24 +23,14 @@ public class MenuUIController : MonoBehaviour
     public Button ControlsButton;
     public Button ControlsPanel;
     public Button pausePanel;
-    public Button InventoryPanel;
-    public Button ContinueButton;
-    public Button MapPanel;
-
 
     ///[SerializeField]
     private bool paused;
-    private bool openInventory;
-    private bool openMap;
-    private bool openDialogue;
 
     // Start is called before the first frame update
     void Start()
     {
         paused = false;
-        openInventory = false;
-        openMap = false;
-        openDialogue = false;
     }
 
 
@@ -53,47 +43,13 @@ public class MenuUIController : MonoBehaviour
         {
             if (!paused)
             {
-                PlayerManager.instance.SetPlayerState(PlayerState.PAUSED);
                 paused = true;
                 DisplaypausePanel();
             }
             else
             {
-                PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
                 paused = false;
                 HidepausePanel();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (!openInventory)
-            {
-                PlayerManager.instance.SetPlayerState(PlayerState.PAUSED);
-                openInventory = true;
-                DisplayInventoryPanel();
-            }
-            else
-            {
-                PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
-                openInventory = false;
-                HideInventoryPanel();
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (!openMap)
-            {
-                PlayerManager.instance.SetPlayerState(PlayerState.PAUSED);
-                openMap = true;
-                DisplayMapPanel();
-            }
-            else
-            {
-                PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
-                openMap = false;
-                HideMapPanel();
             }
         }
     }
@@ -108,28 +64,6 @@ public class MenuUIController : MonoBehaviour
         pausePanel.gameObject.SetActive(false);
     }
 
-
-    public void DisplayMapPanel()
-    {
-        MapPanel.gameObject.SetActive(true);
-    }
-
-
-    public void HideMapPanel()
-    {
-        MapPanel.gameObject.SetActive(false);
-    }
-
-
-    public void DisplayInventoryPanel()
-    {
-        InventoryPanel.gameObject.SetActive(true);
-    }
-
-    public void HideInventoryPanel()
-    {
-        InventoryPanel.gameObject.SetActive(false);
-    }
 
 
 
@@ -270,10 +204,5 @@ public class MenuUIController : MonoBehaviour
     {
         DisplayControlsPanel();
         HideOptionsPanel();
-    }
-
-    public void ButtonContinueButton()    //close pause panel
-    {
-        HidepausePanel();
     }
 }
