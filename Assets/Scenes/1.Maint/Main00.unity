@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5484,7 +5484,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7773756, y: 1}
+    m_SensorSize: {x: 1.7768421, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 1
@@ -13826,6 +13826,7 @@ MonoBehaviour:
   ControlsButton: {fileID: 0}
   ControlsPanel: {fileID: 0}
   pausePanel: {fileID: 1332302785}
+  MapPanel: {fileID: 0}
 --- !u!114 &571355511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21510,6 +21511,7 @@ MonoBehaviour:
   ControlsButton: {fileID: 0}
   ControlsPanel: {fileID: 0}
   pausePanel: {fileID: 0}
+  MapPanel: {fileID: 1114561221}
 --- !u!1001 &965964032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33302,7 +33304,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.5
+      value: -35.5
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -44248,6 +44250,7 @@ GameObject:
   - component: {fileID: 2022134693}
   - component: {fileID: 2022134692}
   - component: {fileID: 2022134694}
+  - component: {fileID: 2022134695}
   m_Layer: 0
   m_Name: MainAmbience
   m_TagString: MainAm
@@ -44375,6 +44378,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a7b1279ff972eb41933f3e0aa120c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2022134695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022134691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4aef666486e504582e2d1ff8b29261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2025315485

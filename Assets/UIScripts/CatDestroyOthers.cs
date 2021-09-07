@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainDestroyOthers : MonoBehaviour
+public class CatDestroyOthers : MonoBehaviour
 {
     private AsyncOperation operation;
 
@@ -20,10 +20,10 @@ public class MainDestroyOthers : MonoBehaviour
             GameObject.Destroy(LowAm);
         }
 
-        GameObject[] CatAmObj = GameObject.FindGameObjectsWithTag("CatAm");
-        foreach (GameObject CatAm in CatAmObj)
+        GameObject[] MainAmObj = GameObject.FindGameObjectsWithTag("MainAm");
+        foreach (GameObject MainAm in MainAmObj)
         {
-            GameObject.Destroy(CatAm);
+            GameObject.Destroy(MainAm);
         }
 
         GameObject[] GreenAmObj = GameObject.FindGameObjectsWithTag("GreenAm");

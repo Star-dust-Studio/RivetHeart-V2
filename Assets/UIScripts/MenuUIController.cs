@@ -23,14 +23,17 @@ public class MenuUIController : MonoBehaviour
     public Button ControlsButton;
     public Button ControlsPanel;
     public Button pausePanel;
+    public Button MapPanel;
 
     ///[SerializeField]
     private bool paused;
+    private bool openMap;
 
     // Start is called before the first frame update
     void Start()
     {
         paused = false;
+        openMap = false;
     }
 
 
@@ -52,6 +55,20 @@ public class MenuUIController : MonoBehaviour
                 HidepausePanel();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (!openMap)
+            {
+                openMap = true;
+                DisplayMapPanel();
+            }
+            else
+            {
+                openMap = false;
+                HideMapPanel();
+            }
+        }
     }
 
     public void DisplaypausePanel()
@@ -64,6 +81,16 @@ public class MenuUIController : MonoBehaviour
         pausePanel.gameObject.SetActive(false);
     }
 
+
+    public void DisplayMapPanel()
+    {
+        MapPanel.gameObject.SetActive(true);
+    }
+
+    public void HideMapPanel()
+    {
+        MapPanel.gameObject.SetActive(false);
+    }
 
 
 
