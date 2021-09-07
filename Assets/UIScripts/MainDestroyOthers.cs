@@ -8,11 +8,7 @@ public class MainDestroyOthers : MonoBehaviour
 
     private void Awake()
     {
-        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("GameMusic");
-        foreach (GameObject MusicBgm in musicObj)
-        {
-            GameObject.Destroy(MusicBgm);
-        }
+
 
         GameObject[] LowAmObj = GameObject.FindGameObjectsWithTag("LowAm");
         foreach (GameObject LowAm in LowAmObj)
