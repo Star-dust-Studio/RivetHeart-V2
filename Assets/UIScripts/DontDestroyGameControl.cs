@@ -18,6 +18,7 @@ public class DontDestroyGameControl : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+
         GameObject[] MainAmObj = GameObject.FindGameObjectsWithTag("MainAm");
         if (MainAmObj.Length > 1)
         {

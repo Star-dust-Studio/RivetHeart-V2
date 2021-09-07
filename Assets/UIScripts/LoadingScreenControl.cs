@@ -15,6 +15,13 @@ public class LoadingScreenControl : MonoBehaviour
     private void Awake()
     {
         BLoadingCanvas = GetComponentInChildren<Canvas>(true);
+
+        GameObject[] loadingObj = GameObject.FindGameObjectsWithTag("DontDestroy");
+        if (loadingObj.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
         DontDestroyOnLoad(gameObject);
     }
 

@@ -181,6 +181,15 @@ public class MenuUIController : MonoBehaviour
         DisplayOptionsPanel();
     }
 
+
+    public void ButtonYesButtonforPause()    //Back to Menu
+    {
+        HideConfirmationPanel();
+        HidepausePanel();
+        SceneManager.LoadScene("BMenu");
+
+    }
+
     public void ButtonNoButtonforPause()    //stay at pause menu
     {
         HideConfirmationPanel();

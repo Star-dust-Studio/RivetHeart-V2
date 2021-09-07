@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1221,7 +1221,7 @@ RectTransform:
   - {fileID: 1076731613}
   - {fileID: 558338442}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1256,6 +1256,7 @@ MonoBehaviour:
   ControlsButton: {fileID: 157578263}
   ControlsPanel: {fileID: 794575202}
   pausePanel: {fileID: 0}
+  MapPanel: {fileID: 0}
 --- !u!1 &202212865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2672,6 +2673,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510089784}
   - component: {fileID: 510089785}
+  - component: {fileID: 510089786}
   m_Layer: 5
   m_Name: UISounds
   m_TagString: Untagged
@@ -2693,7 +2695,7 @@ Transform:
   - {fileID: 1733567873}
   - {fileID: 1336026465}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &510089785
 MonoBehaviour:
@@ -2712,6 +2714,18 @@ MonoBehaviour:
   MusicAudio: {fileID: 1733567874}
   SoundAudio:
   - {fileID: 1336026464}
+--- !u!114 &510089786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510089783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02798ef2c770cc54a8c7956edf60de8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &544264819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,11 +3410,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 637549237}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -73.55597, y: -18.509048, z: 467.01233}
+  m_LocalPosition: {x: 259.6842, y: 178.9969, z: 553.1459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1951013853}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &686103802
 GameObject:
@@ -3910,7 +3924,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &780574502
 MonoBehaviour:
@@ -9630,7 +9644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1122934788
 GameObject:
@@ -11224,7 +11238,7 @@ GameObject:
   - component: {fileID: 1447804585}
   m_Layer: 5
   m_Name: BLoadingCanvas
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11322,6 +11336,7 @@ GameObject:
   - component: {fileID: 1454775024}
   - component: {fileID: 1454775023}
   - component: {fileID: 1454775026}
+  - component: {fileID: 1454775027}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -11453,6 +11468,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: Intro
+--- !u!114 &1454775027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454775021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc5bf388d47adb4a9ee899a0667031a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Main00
+  newScenePassword: FromMenu
 --- !u!1 &1454785631
 GameObject:
   m_ObjectHideFlags: 0
@@ -12848,7 +12877,7 @@ GameObject:
   - component: {fileID: 1733567874}
   m_Layer: 5
   m_Name: MenuBgm
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13756,9 +13785,8 @@ Transform:
   m_Children:
   - {fileID: 1447804584}
   - {fileID: 260945649}
-  - {fileID: 637549239}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952405318
 GameObject:
@@ -14267,7 +14295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2054547492
 MonoBehaviour:
