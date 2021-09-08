@@ -24,17 +24,20 @@ public class MenuUIController : MonoBehaviour
     public Button ControlsPanel;
     public Button pausePanel;
     public Button MapPanel;
+    public GameObject InventoryPanel;
 
     ///[SerializeField]
     private bool paused;
     private bool openMap;
+    private bool openInventory;
 
     // Start is called before the first frame update
     void Start()
     {
         paused = false;
         openMap = false;
-    }
+        openInventory = false;
+}
 
 
 
@@ -69,6 +72,20 @@ public class MenuUIController : MonoBehaviour
                 HideMapPanel();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!openInventory)
+            {
+                openInventory = true;
+                DisplayInventoryPanel();
+            }
+            else
+            {
+                openInventory = false;
+                HideInventoryPanel();
+            }
+        }
     }
 
     public void DisplaypausePanel()
@@ -92,6 +109,15 @@ public class MenuUIController : MonoBehaviour
         MapPanel.gameObject.SetActive(false);
     }
 
+    public void DisplayInventoryPanel()
+    {
+        InventoryPanel.gameObject.SetActive(true);
+    }
+
+    public void HideInventoryPanel()
+    {
+        InventoryPanel.gameObject.SetActive(false);
+    }
 
 
     public void DisplayOptionsPanel()
