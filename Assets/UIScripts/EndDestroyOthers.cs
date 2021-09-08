@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyThis : MonoBehaviour
+public class EndDestroyOthers : MonoBehaviour
 {
     private AsyncOperation operation;
 
@@ -13,13 +13,7 @@ public class DestroyThis : MonoBehaviour
         {
             GameObject.Destroy(MusicBgm);
         }
-
-        GameObject[] endingObj = GameObject.FindGameObjectsWithTag("EndingSong");
-        foreach (GameObject endingBgm in endingObj)
-        {
-            GameObject.Destroy(endingBgm);
-        }
-
+        
         GameObject[] LowAmObj = GameObject.FindGameObjectsWithTag("LowAm");
         foreach (GameObject LowAm in LowAmObj)
         {
