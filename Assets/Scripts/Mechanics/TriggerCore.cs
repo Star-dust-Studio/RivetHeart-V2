@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TriggerCore : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class TriggerCore : MonoBehaviour
     {
         if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
-            //trigger ending and outro
+            SceneManager.LoadScene("Ending 1");
         }
     }
 
