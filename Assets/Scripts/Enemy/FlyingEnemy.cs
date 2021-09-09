@@ -132,7 +132,11 @@ public class FlyingEnemy : MonoBehaviour, IEnemy
 
     private void Die()
     {
-        Instantiate(hpDropPrefab, transform.position, Quaternion.identity);
+        int roll = Random.Range(0, 5);
+        if (roll < 2)
+        {
+            Instantiate(hpDropPrefab, transform.position, Quaternion.identity);
+        }
         enemySpawner.enemies.Remove(gameObject);
         Destroy(gameObject);
     }
