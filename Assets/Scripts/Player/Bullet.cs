@@ -14,14 +14,22 @@ public class Bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
+        Destroy(gameObject, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        Debug.Log("collide");
+        if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("hit enemy");
-            collision.GetComponent<EnemyType>().MinusEnemyHP(bulletDmg);
+            Debug.Log("tag enemy");
+            IEnemy enemy = collision.GetComponent<IEnemy>();
+
+            if (enemy != null)
+            {
+                Debug.Log("minus");
+                enemy.MinusEnemyHP(bulletDmg);
+            }
         }
         Destroy(gameObject);
     }

@@ -17,11 +17,6 @@ public class EnemyType : MonoBehaviour
     public LayerMask player;
     public float playerCheckRadius = 1.0f;
 
-    public GameObject bulletPrefab;
-    public Transform firepoint;
-    public float fireRate = 1f;
-    private float bulletInterval;
-
     private void Start()
     {
         transform.position = spawnPoint.position;
@@ -41,10 +36,12 @@ public class EnemyType : MonoBehaviour
 
         if (isFacingRight == false && transform.position.x < patrolPoint[currentPoint].transform.position.x)
         {
+            Debug.Log("turn to left");
             FlipCharacter();
         }
         else if (isFacingRight == true && transform.position.x > patrolPoint[currentPoint].transform.position.x)
         {
+            Debug.Log("turn to right");
             FlipCharacter();
         }
     }
@@ -54,17 +51,6 @@ public class EnemyType : MonoBehaviour
         isFacingRight = !isFacingRight;
 
         transform.Rotate(0f, 180f, 0f);
-    }
-
-    [ContextMenu("Enemy Shoot")]
-    public void Shoot()
-    {
-        Debug.Log("enemy pew");
-        if (bulletInterval < Time.time)
-        {
-            Instantiate(bulletPrefab, firepoint.position, transform.localRotation);
-            bulletInterval = Time.time + fireRate;
-        }
     }
 
     public void MinusEnemyHP(int value)

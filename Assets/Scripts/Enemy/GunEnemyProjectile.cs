@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundEnemyProjectile : Projectiles
+public class GunEnemyProjectile : Projectiles
 {
     private Rigidbody2D rb;
 

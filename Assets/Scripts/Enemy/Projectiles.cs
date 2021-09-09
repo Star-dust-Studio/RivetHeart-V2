@@ -9,7 +9,7 @@ public class Projectiles : MonoBehaviour
 
     protected virtual void Start()
     {
-        
+        Destroy(gameObject, 1);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,7 +19,6 @@ public class Projectiles : MonoBehaviour
             Debug.Log("hit player");
             PlayerManager.instance.MinusHP(projectilesDmg);
         }
-        Debug.Log("bullet gone");
         Destroy(gameObject);
     }
 }
