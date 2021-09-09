@@ -10,6 +10,8 @@ public class ControlsTips : MonoBehaviour
     private TextMeshProUGUI tipsText;
     public float timeToHide = 2f;
     public float fadeSpeed = 1.5f;
+    private float autoHideTime = 7f;
+    Coroutine coroutine;
 
     private void Start()
     {
@@ -22,52 +24,59 @@ public class ControlsTips : MonoBehaviour
         switch (controls)
         {
             case Controls.Move:
+                coroutine = StartCoroutine(AutoHideText());
                 if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
                 {
                     GameManager.instance.doneMove = true;
-                    StartCoroutine(HideText());
+                    coroutine = StartCoroutine(HideText());
                 }
                 break;
             case Controls.Jump:
+                coroutine = StartCoroutine(AutoHideText());
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     GameManager.instance.doneJump = true;
-                    StartCoroutine(HideText());
+                    coroutine = StartCoroutine(HideText());
                 }
                 break;
             case Controls.Interact:
+                coroutine = StartCoroutine(AutoHideText());
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     GameManager.instance.doneInteract = true;
-                    StartCoroutine(HideText());
+                    coroutine = StartCoroutine(HideText());
                 }
                 break;
             case Controls.Inventory:
+                coroutine = StartCoroutine(AutoHideText());
                 if (Input.GetKeyDown(KeyCode.Tab))
                 {
                     GameManager.instance.doneInventory = true;
-                    StartCoroutine(HideText());
+                    coroutine = StartCoroutine(HideText());
                 }
                 break;
             case Controls.Map:
+                coroutine = StartCoroutine(AutoHideText());
                 if (Input.GetKeyDown(KeyCode.M))
                 {
                     GameManager.instance.doneMap = true;
-                    StartCoroutine(HideText());
+                    coroutine = StartCoroutine(HideText());
                 }
                 break;
             case Controls.Shoot:
+                coroutine = StartCoroutine(AutoHideText());
                 if (Input.GetMouseButtonDown(0))
                 {
                     GameManager.instance.doneShoot = true;
-                    StartCoroutine(HideText());
+                    coroutine = StartCoroutine(HideText());
                 }
                 break;
             case Controls.Grapple:
+                coroutine = StartCoroutine(AutoHideText());
                 if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
                     GameManager.instance.doneGrapple = true;
-                    StartCoroutine(HideText());
+                    coroutine = StartCoroutine(HideText());
                 }
                 break;
             default:
@@ -77,6 +86,14 @@ public class ControlsTips : MonoBehaviour
 
     IEnumerator HideText()
     {
+        tipsText.CrossFadeAlpha(0, fadeSpeed, false);
+        yield return new WaitForSeconds(timeToHide);
+        tipsText.gameObject.SetActive(false);
+    }
+
+    IEnumerator AutoHideText()
+    {
+        yield return new WaitForSeconds(autoHideTime);
         tipsText.CrossFadeAlpha(0, fadeSpeed, false);
         yield return new WaitForSeconds(timeToHide);
         tipsText.gameObject.SetActive(false);

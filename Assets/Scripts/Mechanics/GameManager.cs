@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 
     public int componentsCollected;
     public bool unlockedEnding = false;
+    public bool[] doorOpened;
 
     [Header("Tutorial")]
     public bool doneMove = false;

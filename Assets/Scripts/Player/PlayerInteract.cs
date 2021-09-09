@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour, IPickup
 {
-    public InventoryManager inventory;
-
     [SerializeField]
     private float maxCastDistance = 1f;
     [SerializeField]
@@ -32,6 +30,6 @@ public class PlayerInteract : MonoBehaviour, IPickup
 
     public void PickUpItem(ItemPickupSO pickupSO)
     {
-        inventory.AddNewItem(pickupSO);
+        InventoryManager.instance.AddNewItem(pickupSO);
     }
 }
