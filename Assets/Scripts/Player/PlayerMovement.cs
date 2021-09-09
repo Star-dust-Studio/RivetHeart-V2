@@ -56,12 +56,6 @@ public class PlayerMovement : MonoBehaviour
             isJumping = true;
             animator.SetBool("IsJumping", true);
         }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            //animator.SetTrigger("Shoot");
-            //playerShooter.Shoot();
-        }
     }
 
     void FixedUpdate()

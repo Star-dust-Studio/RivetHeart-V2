@@ -20,7 +20,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Weapon & Tool")]
     public GrapplingHook grapplingHookScript;
-    public bool slingGunObtained = false;
+    public bool grappleObtained = false;
     public GameObject slingGun;
     public SlingGun slingGunScript;
     public SlingRope slingRopeScript;
@@ -34,6 +34,9 @@ public class PlayerManager : MonoBehaviour
     public PlayerMovement playerMovement;
     private float storedSpeed;
     public float hurtSlowSpeed;
+    public float invincibility = 3f;
+    private float storedInvincibleValue;
+    private bool isVulnerable = true;
 
     private void Awake()
     {
@@ -54,25 +57,28 @@ public class PlayerManager : MonoBehaviour
         SetToolType(Tool.GRAPPLINGHOOK);
         storedSpeed = playerMovement.speed;
         currentHP = maxHP;
+        storedInvincibleValue = invincibility;
     }
 
     private void Update()
     {
-        //testing
-        if (Input.GetKeyDown(KeyCode.L))
+        if (!isVulnerable)
         {
-            UnlockSlingshot();
-            SetToolType(Tool.SLINGGUN);
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SetToolType(Tool.GRAPPLINGHOOK);
+            if (invincibility > 0)
+            {
+                invincibility -= Time.deltaTime;
+            }
+            else
+            {
+                isVulnerable = true;
+                invincibility = storedInvincibleValue;
+            }
         }
     }
 
-    public void UnlockSlingshot()
+    public void UnlockGrapple()
     {
-        slingGunObtained = true;
+        grappleObtained = true;
     }
 
     public void SetToolType(Tool toolType)
@@ -149,10 +155,14 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void MinusHP(int damage)
-    {
-        currentHP -= damage;
-        StartCoroutine(ChangeSpeed());
-        Debug.Log("Player HP: " + currentHP);
+    {       
+        if (isVulnerable)
+        {
+            isVulnerable = false;
+            currentHP -= damage;
+            StartCoroutine(ChangeSpeed());
+            Debug.Log("Player HP: " + currentHP);
+        }        
     }
 
     IEnumerator ChangeSpeed()

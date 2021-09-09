@@ -64,7 +64,7 @@ public class GrapplingHook : MonoBehaviour
         var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
         playerPosition = grappleGun.transform.position;
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (PlayerManager.instance.grappleObtained == true && Input.GetKey(KeyCode.LeftShift))
         {
             ShowRopeCast(aimDirection);
             //Cursor.visible = true;
