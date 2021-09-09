@@ -6,13 +6,28 @@ using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager instance { get; private set; }
+
     public List<Sprite> itemSpriteList;
     public GameObject core;
     public Image[] itemArray;
     public Sprite defaultSlotSprite;
     public TextMeshProUGUI keyNumberText;
-    private int keyNumber = 0;
+    public int keyNumber = 0;
     public ItemPickupSO keySO;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -71,7 +86,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     [ContextMenu("Use key")]
-    public void RemoveKey()
+    public void UseKey()
     {
         if (keyNumber > 0)
         {

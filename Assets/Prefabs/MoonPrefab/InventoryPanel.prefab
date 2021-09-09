@@ -249,7 +249,6 @@ GameObject:
   - component: {fileID: 9123532041615013964}
   - component: {fileID: 9123532041615013965}
   - component: {fileID: 9123532041615013954}
-  - component: {fileID: 9123532041615013955}
   m_Layer: 5
   m_Name: InventoryPanel
   m_TagString: Untagged
@@ -362,30 +361,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &9123532041615013955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9123532041615013967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf989c806c6ec9479a92b7b5e66865e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSpriteList: []
-  core: {fileID: 9123532042661212266}
-  itemArray:
-  - {fileID: 9123532041405648687}
-  - {fileID: 9123532042992837912}
-  - {fileID: 9123532042826005995}
-  - {fileID: 9123532041951809527}
-  - {fileID: 9123532041639459036}
-  - {fileID: 9123532042296307855}
-  defaultSlotSprite: {fileID: 21300000, guid: dfbb4c9ab718b384c96bac6faee64917, type: 3}
-  keyNumberText: {fileID: 9123532042595774737}
-  keySO: {fileID: 11400000, guid: 799fdc2e27c563247a0664534aaf2dc9, type: 2}
 --- !u!1 &9123532041619555526
 GameObject:
   m_ObjectHideFlags: 0
