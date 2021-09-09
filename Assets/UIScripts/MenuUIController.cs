@@ -37,9 +37,9 @@ public class MenuUIController : MonoBehaviour
         paused = false;
         openMap = false;
         openInventory = false;
-}
+    }
 
-
+    
 
 
     // Update is called once per frame
@@ -267,4 +267,7 @@ public class MenuUIController : MonoBehaviour
         DisplayControlsPanel();
         HideOptionsPanel();
     }
+
+
+    
 }
