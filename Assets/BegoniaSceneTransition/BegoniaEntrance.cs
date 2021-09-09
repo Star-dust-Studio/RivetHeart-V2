@@ -9,14 +9,17 @@ public class BegoniaEntrance : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        if(BegoniaPlayerMovement.instance.scenePassword == entrancePassword)
+        if (BegoniaPlayerMovement.instance != null)
         {
-            BegoniaPlayerMovement.instance.transform.position = transform.position; //transform.position is the entrance position
-            Debug.Log("ENTER!");
-        }
-        else
-        {
-            Debug.Log("WRONG PW!");
-        }
+            if (BegoniaPlayerMovement.instance.scenePassword == entrancePassword)
+            {
+                BegoniaPlayerMovement.instance.transform.position = transform.position; //transform.position is the entrance position
+                Debug.Log("ENTER!");
+            }
+            else
+            {
+                Debug.Log("WRONG PW!");
+            }
+        }       
     }
 }

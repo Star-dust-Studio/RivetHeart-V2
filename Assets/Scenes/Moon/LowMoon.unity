@@ -8977,6 +8977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 280209226}
   - component: {fileID: 280209225}
+  - component: {fileID: 280209227}
   m_Layer: 0
   m_Name: TriggerCore
   m_TagString: Untagged
@@ -9025,6 +9026,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &280209227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280209224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1200ee2ab672cc248b00ea4f027dee75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &281308158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16300,7 +16313,7 @@ GameObject:
   - component: {fileID: 515507397}
   - component: {fileID: 515507398}
   m_Layer: 0
-  m_Name: equipment0_0
+  m_Name: KeyDoorImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36212,7 +36225,7 @@ GameObject:
   - component: {fileID: 1035249200}
   - component: {fileID: 1035249201}
   m_Layer: 0
-  m_Name: fireplace_0
+  m_Name: SwitchImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65219,7 +65232,7 @@ GameObject:
   - component: {fileID: 1859283144}
   - component: {fileID: 1859283145}
   m_Layer: 0
-  m_Name: equipment0_0
+  m_Name: SwitchDoorImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67256,7 +67269,7 @@ GameObject:
   - component: {fileID: 1904910816}
   - component: {fileID: 1904910817}
   m_Layer: 0
-  m_Name: workbench_0
+  m_Name: CoreImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67691,7 +67704,7 @@ GameObject:
   - component: {fileID: 1915587587}
   - component: {fileID: 1915587588}
   m_Layer: 0
-  m_Name: equipment0_0
+  m_Name: FinalDoorImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
