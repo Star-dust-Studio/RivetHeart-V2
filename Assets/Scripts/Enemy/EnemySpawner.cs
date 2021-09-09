@@ -18,7 +18,10 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.RefEnemySpawner(this);
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.RefEnemySpawner(this);
+        }
 
         enemies = new List<GameObject>();
 
