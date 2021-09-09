@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Shooter playerShooter;
+    //private Shooter playerShooter;
 
     private SpriteRenderer playerSprite;
     private Rigidbody2D rBody;
@@ -27,90 +27,91 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 1.0f;
     public LayerMask ground;
 
+    /// <summary>
+    /// 0 = allow all movements, 1 = restrict hook, 2 = restrict all movements
+    /// </summary>
+    public int playerState;
+
     void Awake()
     {
+        Time.timeScale = 1; // spaghetti
         playerSprite = GetComponent<SpriteRenderer>();
         rBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        playerShooter = GetComponent<Shooter>();
-    }
-
-    private void Start()
-    {
-        PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
+        //playerShooter = GetComponent<Shooter>();
     }
 
     void Update()
     {
-        if (PlayerManager.instance.playerState == PlayerState.ALIVE)
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        if (IsGrounded())
         {
-            horizontalInput = Input.GetAxis("Horizontal");
+            animator.SetFloat("Velocity", Mathf.Abs(horizontalInput));
+            animator.SetBool("IsJumping", false);
+        }
 
-            if (IsGrounded())
-            {
-                animator.SetFloat("Velocity", Mathf.Abs(horizontalInput));
-                animator.SetBool("IsJumping", false);
-            }
+        if (Input.GetButtonDown("Jump") && IsGrounded())
+        {
+            isJumping = true;
+            animator.SetBool("IsJumping", true);
+        }
 
-            if (Input.GetButtonDown("Jump") && IsGrounded())
-            {
-                isJumping = true;
-                animator.SetBool("IsJumping", true);
-            }
+        if (Input.GetMouseButtonDown(0))
+        {
+            //animator.SetTrigger("Shoot");
+            //playerShooter.Shoot();
         }
     }
 
     void FixedUpdate()
     {
-        if (PlayerManager.instance.playerState == PlayerState.ALIVE)
+        if (horizontalInput < 0f || horizontalInput > 0f)
         {
-            if (horizontalInput < 0f || horizontalInput > 0f)
+            if (isFacingRight == false && horizontalInput > 0)
             {
-                if (isFacingRight == false && horizontalInput > 0)
-                {
-                    FlipCharacter();
-                }
-                else if (isFacingRight == true && horizontalInput < 0)
-                {
-                    FlipCharacter();
-                }
-
-                if (isSwinging)
-                {
-                    //animator.SetBool("IsSwinging", true);
-
-                    // Get normalized direction vector from player to the hook point
-                    var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
-
-                    // Inverse the direction to get a perpendicular direction
-                    Vector2 perpendicularDirection;
-                    if (horizontalInput < 0)
-                    {
-                        perpendicularDirection = new Vector2(-playerToHookDirection.y, playerToHookDirection.x);
-                        var leftPerpPos = (Vector2)transform.position - perpendicularDirection * -2f;
-                        Debug.DrawLine(transform.position, leftPerpPos, Color.green, 0f);
-                    }
-                    else
-                    {
-                        perpendicularDirection = new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
-                        var rightPerpPos = (Vector2)transform.position + perpendicularDirection * 2f;
-                        Debug.DrawLine(transform.position, rightPerpPos, Color.green, 0f);
-                    }
-
-                    var force = perpendicularDirection * swingForce;
-                    rBody.AddForce(force, ForceMode2D.Force);
-                }
+                FlipCharacter();
+            }
+            else if (isFacingRight == true && horizontalInput < 0)
+            {
+                FlipCharacter();
             }
 
-            if (!isSwinging)
+            if (isSwinging)
             {
-                rBody.velocity = new Vector2(horizontalInput * speed, rBody.velocity.y);
+                //animator.SetBool("IsSwinging", true);
 
-                if (isJumping)
+                // Get normalized direction vector from player to the hook point
+                var playerToHookDirection = (ropeHook - (Vector2)transform.position).normalized;
+
+                // Inverse the direction to get a perpendicular direction
+                Vector2 perpendicularDirection;
+                if (horizontalInput < 0)
                 {
-                    rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
-                    isJumping = false;
+                    perpendicularDirection = new Vector2(-playerToHookDirection.y, playerToHookDirection.x);
+                    var leftPerpPos = (Vector2)transform.position - perpendicularDirection * -2f;
+                    Debug.DrawLine(transform.position, leftPerpPos, Color.green, 0f);
                 }
+                else
+                {
+                    perpendicularDirection = new Vector2(playerToHookDirection.y, -playerToHookDirection.x);
+                    var rightPerpPos = (Vector2)transform.position + perpendicularDirection * 2f;
+                    Debug.DrawLine(transform.position, rightPerpPos, Color.green, 0f);
+                }
+
+                var force = perpendicularDirection * swingForce;
+                rBody.AddForce(force, ForceMode2D.Force);
+            }
+        }
+
+        if (!isSwinging)
+        {
+            rBody.velocity = new Vector2(horizontalInput * speed, rBody.velocity.y);
+
+            if (isJumping)
+            {
+                rBody.velocity = new Vector2(rBody.velocity.x, jumpSpeed);
+                isJumping = false;
             }
         }
     }
