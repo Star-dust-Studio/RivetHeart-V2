@@ -7,6 +7,7 @@ public class Enemy
 {
     public GameObject enemyPrefab;
     public GameObject[] patrolPoints;
+    public GameObject spawnPoint;
 }
 
 public class EnemySpawner : MonoBehaviour
@@ -23,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
 
         for (int i = 0; i < enemy.Length; i++)
         {
-            GameObject newEnemy = Instantiate(enemy[i].enemyPrefab, enemy[i].patrolPoints[0].transform.position, Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy[i].enemyPrefab, enemy[i].spawnPoint.transform.position, Quaternion.identity);
             enemies.Add(newEnemy);
 
             newEnemy.GetComponent<IEnemy>().InitializePatrolSize(enemy[i].patrolPoints.Length);
@@ -33,14 +34,5 @@ public class EnemySpawner : MonoBehaviour
                 newEnemy.GetComponent<IEnemy>().AssignPatrolPoints(enemy[i].patrolPoints[j], j);
             }
         }
-    }
-
-    public void ClearEnemy()
-    {
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            Destroy(enemies[i]);
-        }
-        enemies.Clear();
     }
 }
