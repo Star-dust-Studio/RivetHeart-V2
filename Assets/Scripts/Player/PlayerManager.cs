@@ -27,9 +27,13 @@ public class PlayerManager : MonoBehaviour
     public SpringJoint2D springJoint2D;
 
     [Header("Info Tracker")]
-    public int hp = 5;
+    public int maxHP = 5;
+    private int currentHP;
     public Transform playerPosition;
     public PlayerState playerState;
+    public PlayerMovement playerMovement;
+    private float storedSpeed;
+    public float hurtSlowSpeed;
 
     private void Awake()
     {
@@ -47,8 +51,9 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         playerPosition = GetComponent<Transform>();
-
         SetToolType(Tool.GRAPPLINGHOOK);
+        storedSpeed = playerMovement.speed;
+        currentHP = maxHP;
     }
 
     private void Update()
@@ -134,8 +139,26 @@ public class PlayerManager : MonoBehaviour
 
     }
 
+    public void AddHP(int healpoint)
+    {
+        if (currentHP > 0 && currentHP < maxHP)
+        {
+            currentHP += healpoint;
+            Debug.Log("Player HP: " + currentHP);
+        }
+    }
+
     public void MinusHP(int damage)
     {
-        hp -= damage;
+        currentHP -= damage;
+        StartCoroutine(ChangeSpeed());
+        Debug.Log("Player HP: " + currentHP);
+    }
+
+    IEnumerator ChangeSpeed()
+    {
+        playerMovement.speed = hurtSlowSpeed;
+        yield return new WaitForSeconds(1);
+        playerMovement.speed = storedSpeed;
     }
 }
