@@ -14,7 +14,7 @@ public class GunEnemy : MonoBehaviour, IEnemy
     private float radius = 1f;
     private bool hasPatrolPoints = false;
 
-    public static bool isFacingRight = false;
+    public bool isFacingRight = false;
     private bool isShooting = false;
 
     public LayerMask player;
@@ -130,9 +130,8 @@ public class GunEnemy : MonoBehaviour, IEnemy
 
     private void FlipCharacter()
     {
-        isFacingRight = !isFacingRight;
-
         transform.Rotate(0f, 180f, 0f);
+        isFacingRight = !isFacingRight;
     }
 
     private void Die()
