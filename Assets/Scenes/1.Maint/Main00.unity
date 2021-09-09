@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6157,7 +6157,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7772595, y: 1}
+    m_SensorSize: {x: 1.779235, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 1
@@ -13068,6 +13068,7 @@ MonoBehaviour:
   enemySpawner: {fileID: 0}
   componentsCollected: 0
   unlockedEnding: 0
+  doorOpened: 00000000
   doneMove: 0
   doneJump: 0
   doneInteract: 0
@@ -21175,7 +21176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d349a828ca3e7247b614476df80bd62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 1707049253725660052}
   maxCastDistance: 0.8
   layerMask:
     serializedVersion: 2
@@ -52554,6 +52554,7 @@ MonoBehaviour:
   - {fileID: 1707049251986844504}
   defaultSlotSprite: {fileID: 21300000, guid: dfbb4c9ab718b384c96bac6faee64917, type: 3}
   keyNumberText: {fileID: 1707049251686722246}
+  keyNumber: 0
   keySO: {fileID: 11400000, guid: 799fdc2e27c563247a0664534aaf2dc9, type: 2}
 --- !u!114 &1707049253725660053
 MonoBehaviour:
