@@ -11,6 +11,12 @@ public class Shooter : MonoBehaviour
 
     public Transform crosshair;
     float aimAngle;
+    Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -37,6 +43,7 @@ public class Shooter : MonoBehaviour
     {
         if (bulletInterval < Time.time)
         {
+            anim.SetTrigger("shoot");
             Instantiate(bulletPrefab, firepoint.position, Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg));
             bulletInterval = Time.time + fireRate;
         }
@@ -44,8 +51,8 @@ public class Shooter : MonoBehaviour
 
     private void SetCrosshairPosition(float aimAngle)
     {
-        var x = transform.position.x + 1f * Mathf.Cos(aimAngle);
-        var y = transform.position.y + 1f * Mathf.Sin(aimAngle);
+        var x = transform.position.x + 2.5f * Mathf.Cos(aimAngle);
+        var y = transform.position.y + 2.5f * Mathf.Sin(aimAngle);
 
         var crossHairPosition = new Vector3(x, y, 0);
         crosshair.transform.position = crossHairPosition;

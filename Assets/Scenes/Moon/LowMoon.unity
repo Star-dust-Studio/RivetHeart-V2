@@ -9068,6 +9068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1200ee2ab672cc248b00ea4f027dee75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactText: {fileID: 0}
 --- !u!1001 &281308158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21842,6 +21843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   elevator: {fileID: 717897605}
+  interactSprite: {fileID: 1041446190}
 --- !u!61 &664710712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23773,7 +23775,7 @@ MonoBehaviour:
   floor:
   - {fileID: 181294428}
   - {fileID: 1383142357}
-  spawnFloor: {fileID: 181294428}
+  spawnFloor: {fileID: 1383142357}
   moveSpeed: 6
 --- !u!61 &717897606
 BoxCollider2D:
@@ -64931,7 +64933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838516169}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -265.55, y: -19.24, z: -65.70957}
+  m_LocalPosition: {x: -265.55, y: -47.96, z: -65.70957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 181294428}
@@ -71653,7 +71655,7 @@ PrefabInstance:
     - target: {fileID: 1983800054452790597, guid: 3bd3833f493a51c4181579e2e70646d4,
         type: 3}
       propertyPath: ShapeModule.radiusThickness
-      value: 1.0000
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bd3833f493a51c4181579e2e70646d4, type: 3}

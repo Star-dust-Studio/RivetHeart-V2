@@ -6,13 +6,16 @@ public class Switch : MonoBehaviour
 {
     public SwitchDoor switchDoor;
     private bool canInteract = false;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         if (GameManager.instance.doorOpened[switchDoor.doorID] == true)
         {
-            //switch on from start
+            anim.SetBool("stayActivated", true);
         }
     }
 
@@ -22,6 +25,7 @@ public class Switch : MonoBehaviour
         if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
             switchDoor.OpenDoor();
+            anim.SetBool("isActivated", true);
         }
     }
 

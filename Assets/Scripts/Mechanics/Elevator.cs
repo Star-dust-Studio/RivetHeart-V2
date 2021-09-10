@@ -14,6 +14,14 @@ public class Elevator : MonoBehaviour
     void Start()
     {
         transform.position = spawnFloor.position;
+        if (spawnFloor == floor[0])
+        {
+            currentFloor = 0;
+        }
+        else
+        {
+            currentFloor = 1;
+        }
     }
 
     private void Update()
