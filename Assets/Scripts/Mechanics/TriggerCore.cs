@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class TriggerCore : MonoBehaviour
 {
     private bool canInteract = false;
+    public GameObject interactText;
+
+    private void Start()
+    {
+        interactText.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,6 +26,8 @@ public class TriggerCore : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            interactText.SetActive(true);
+
             if (GameManager.instance.componentsCollected == 6)
             {
                 canInteract = true;
@@ -31,6 +39,7 @@ public class TriggerCore : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            interactText.SetActive(false);
             canInteract = false;
         }
     }
