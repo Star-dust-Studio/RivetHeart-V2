@@ -104,6 +104,8 @@ public class MenuUIController : MonoBehaviour
     public void HidepausePanel()
     {
         pausePanel.gameObject.SetActive(false);
+        PlayerManager.instance.InfoVisibility(true);
+        PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
     }
 
 

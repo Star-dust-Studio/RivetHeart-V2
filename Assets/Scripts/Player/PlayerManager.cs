@@ -61,6 +61,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        InfoVisibility(false);
         StartCoroutine(SlowStart());
         playerPosition = GetComponent<Transform>();
         SetToolType(Tool.GRAPPLINGHOOK);
@@ -82,7 +83,6 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator SlowStart()
     {
-        InfoVisibility(false);
         SetPlayerState(PlayerState.DEAD);
         yield return new WaitForSeconds(2);
         SetPlayerState(PlayerState.ALIVE);
