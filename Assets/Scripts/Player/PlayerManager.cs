@@ -39,6 +39,7 @@ public class PlayerManager : MonoBehaviour
     private bool isVulnerable = true;
 
     [Header("UI")]
+    public GameObject info;
     public GameObject hookUISprite;
     public GameObject[] hpBulb;
     public GameObject dieOverlay;
@@ -81,9 +82,12 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator SlowStart()
     {
+        InfoVisibility(false);
         SetPlayerState(PlayerState.DEAD);
         yield return new WaitForSeconds(2);
         SetPlayerState(PlayerState.ALIVE);
+        yield return new WaitForSeconds(1);
+        InfoVisibility(true);
     }
 
     private void Update()
@@ -236,5 +240,10 @@ public class PlayerManager : MonoBehaviour
         {
             hpBulb[i].SetActive(true);
         }
+    }
+
+    public void InfoVisibility(bool state)
+    {
+        info.SetActive(state);
     }
 }

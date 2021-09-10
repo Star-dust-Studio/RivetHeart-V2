@@ -39,9 +39,6 @@ public class MenuUIController : MonoBehaviour
         openInventory = false;
     }
 
-    
-
-
     // Update is called once per frame
     void Update()
     {
@@ -49,43 +46,54 @@ public class MenuUIController : MonoBehaviour
         {
             if (!paused)
             {
+                PlayerManager.instance.SetPlayerState(PlayerState.PAUSED);
+                PlayerManager.instance.InfoVisibility(false);
                 paused = true;
                 DisplaypausePanel();
             }
             else
             {
+                PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
+                PlayerManager.instance.InfoVisibility(true);
                 paused = false;
                 HidepausePanel();
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (!openMap)
+        if (PlayerManager.instance.playerState == PlayerState.ALIVE)
+        {            
+            if (Input.GetKeyDown(KeyCode.M))
             {
-                openMap = true;
-                DisplayMapPanel();
+                if (!openMap)
+                {
+                    PlayerManager.instance.InfoVisibility(false);
+                    openMap = true;
+                    DisplayMapPanel();
+                }
+                else
+                {
+                    PlayerManager.instance.InfoVisibility(true);
+                    openMap = false;
+                    HideMapPanel();
+                }
             }
-            else
-            {
-                openMap = false;
-                HideMapPanel();
-            }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (!openInventory)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
-                openInventory = true;
-                DisplayInventoryPanel();
+                if (!openInventory)
+                {
+                    PlayerManager.instance.InfoVisibility(false);
+                    openInventory = true;
+                    DisplayInventoryPanel();
+                }
+                else
+                {
+                    PlayerManager.instance.InfoVisibility(true);
+                    openInventory = false;
+                    HideInventoryPanel();
+                }
             }
-            else
-            {
-                openInventory = false;
-                HideInventoryPanel();
-            }
-        }
+        }       
     }
 
     public void DisplaypausePanel()
@@ -130,9 +138,6 @@ public class MenuUIController : MonoBehaviour
         OptionsPanel.gameObject.SetActive(false);
     }
 
-
-
-
     public void DisplayAudioPanel()
     {
         AudioPanel.gameObject.SetActive(true);
@@ -142,9 +147,6 @@ public class MenuUIController : MonoBehaviour
     {
        AudioPanel.gameObject.SetActive(false);
     }
-
-
-
 
     public void DisplayVideoPanel()
     {
@@ -156,9 +158,6 @@ public class MenuUIController : MonoBehaviour
        VideoPanel.gameObject.SetActive(false);
     }
 
-
-
-
     public void DisplayConfirmationPanel()
     {
         ConfirmationPanel.gameObject.SetActive(true);
@@ -168,8 +167,6 @@ public class MenuUIController : MonoBehaviour
     {
         ConfirmationPanel.gameObject.SetActive(false);
     }
-
-
 
     public void DisplayControlsPanel()
     {
@@ -181,20 +178,11 @@ public class MenuUIController : MonoBehaviour
         ControlsPanel.gameObject.SetActive(false);
     }
 
-
-
-
-
-
     public void ButtonQuitGame()    //quit game
     {
         Application.Quit();
         Debug.Log("QuitGame");
     }
-
-
-
-
 
     public void ButtonYesButton()    //quit to menu
     {
@@ -235,15 +223,11 @@ public class MenuUIController : MonoBehaviour
         HideOptionsPanel();
     }
 
-
-
     public void ButtonVideoButton()    //open video panel
     {
         DisplayVideoPanel();
         HideOptionsPanel();
     }
-
-
 
     public void ButtonBackToOptions()    //back to options menu
     {
@@ -253,21 +237,14 @@ public class MenuUIController : MonoBehaviour
         HideControlsPanel();
     }
 
-
-
     public void ButtonOptionsButton()    //open options menu
     {
         DisplayOptionsPanel();
     }
 
-
-
     public void ButtonControlsButton()    //open controls menu
     {
         DisplayControlsPanel();
         HideOptionsPanel();
-    }
-
-
-    
+    }    
 }

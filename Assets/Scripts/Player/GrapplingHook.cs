@@ -53,44 +53,47 @@ public class GrapplingHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20f));
-        var facingDirection = worldMousePosition - transform.position;
-        var aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
-        if (aimAngle < 0f)
+        if (PlayerManager.instance.playerState == PlayerState.ALIVE)
         {
-            aimAngle = Mathf.PI * 2 + aimAngle;
-        }
-
-        var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
-        playerPosition = grappleGun.transform.position;
-
-        if (PlayerManager.instance.grappleObtained == true && Input.GetKey(KeyCode.LeftShift))
-        {
-            ShowRopeCast(aimDirection);
-            //Cursor.visible = true;
-
-            if (!ropeAttached)
+            var worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20f));
+            var facingDirection = worldMousePosition - transform.position;
+            var aimAngle = Mathf.Atan2(facingDirection.y, facingDirection.x);
+            if (aimAngle < 0f)
             {
-                SetCrosshairPosition(aimAngle);
-                playerMovement.isSwinging = false;
+                aimAngle = Mathf.PI * 2 + aimAngle;
+            }
+
+            var aimDirection = Quaternion.Euler(0, 0, aimAngle * Mathf.Rad2Deg) * Vector2.right;
+            playerPosition = grappleGun.transform.position;
+
+            if (PlayerManager.instance.grappleObtained == true && Input.GetKey(KeyCode.LeftShift))
+            {
+                ShowRopeCast(aimDirection);
+                //Cursor.visible = true;
+
+                if (!ropeAttached)
+                {
+                    SetCrosshairPosition(aimAngle);
+                    playerMovement.isSwinging = false;
+                }
+                else
+                {
+                    playerMovement.isSwinging = true;
+                    playerMovement.ropeHook = ropePositions.Last();
+                    crosshairSprite.enabled = false;
+                }
+                UpdateRopePositions();
+                HandleRopeLength();
+                HandleInput(aimDirection);
             }
             else
             {
-                playerMovement.isSwinging = true;
-                playerMovement.ropeHook = ropePositions.Last();
+                //Cursor.visible = false;
+                ResetRope();
                 crosshairSprite.enabled = false;
+                previewRopeRenderer.enabled = false;
             }
-            UpdateRopePositions();
-            HandleRopeLength();
-            HandleInput(aimDirection);
-        }
-        else
-        {
-            //Cursor.visible = false;
-            ResetRope();
-            crosshairSprite.enabled = false;
-            previewRopeRenderer.enabled = false;
-        }
+        }       
     }
 
     private void ShowRopeCast(Vector2 aimDirection)

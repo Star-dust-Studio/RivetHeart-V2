@@ -28,8 +28,22 @@ public class TriggerTips : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            text.SetActive(true);
-            Destroy(gameObject);
+            if (controls == Controls.Move)
+            {
+                StartCoroutine(SlowShow());
+            }
+            else
+            {
+                text.SetActive(true);
+                Destroy(gameObject);
+            }            
         }
+    }
+
+    IEnumerator SlowShow()
+    {
+        yield return new WaitForSeconds(3f);
+        text.SetActive(true);
+        Destroy(gameObject);
     }
 }
