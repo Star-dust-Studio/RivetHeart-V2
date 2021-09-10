@@ -27,7 +27,7 @@ public class PlayerManager : MonoBehaviour
     public SpringJoint2D springJoint2D;
 
     [Header("Info Tracker")]
-    public int maxHP = 5;
+    public int maxHP = 4;
     private int currentHP;
     public Transform playerPosition;
     public PlayerState playerState;
@@ -37,6 +37,13 @@ public class PlayerManager : MonoBehaviour
     public float invincibility = 3f;
     private float storedInvincibleValue;
     private bool isVulnerable = true;
+
+    [Header("UI")]
+    public GameObject hookUISprite;
+    public GameObject[] hpBulb;
+    public GameObject dieOverlay;
+    Animator dieOverlayAnim;
+    Animator anim;
 
     private void Awake()
     {
@@ -53,11 +60,30 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(SlowStart());
         playerPosition = GetComponent<Transform>();
         SetToolType(Tool.GRAPPLINGHOOK);
         storedSpeed = playerMovement.speed;
         currentHP = maxHP;
         storedInvincibleValue = invincibility;
+        if (grappleObtained)
+        {
+            hookUISprite.SetActive(true);
+        }
+        else
+        {
+            hookUISprite.SetActive(false);
+        }
+        anim = GetComponent<Animator>();
+        dieOverlayAnim = dieOverlay.GetComponent<Animator>();
+        dieOverlay.SetActive(false);
+    }
+
+    IEnumerator SlowStart()
+    {
+        SetPlayerState(PlayerState.DEAD);
+        yield return new WaitForSeconds(2);
+        SetPlayerState(PlayerState.ALIVE);
     }
 
     private void Update()
@@ -79,6 +105,7 @@ public class PlayerManager : MonoBehaviour
     public void UnlockGrapple()
     {
         grappleObtained = true;
+        hookUISprite.SetActive(true);
     }
 
     public void SetToolType(Tool toolType)
@@ -142,7 +169,6 @@ public class PlayerManager : MonoBehaviour
                     break;
                 }
         }
-
     }
 
     public void AddHP(int healpoint)
@@ -151,6 +177,7 @@ public class PlayerManager : MonoBehaviour
         {
             currentHP += healpoint;
             Debug.Log("Player HP: " + currentHP);
+            hpBulb[currentHP - 1].SetActive(true);
         }
     }
 
@@ -158,10 +185,25 @@ public class PlayerManager : MonoBehaviour
     {       
         if (isVulnerable)
         {
-            isVulnerable = false;
-            currentHP -= damage;
-            StartCoroutine(ChangeSpeed());
-            Debug.Log("Player HP: " + currentHP);
+            if (currentHP > 1)
+            {
+                isVulnerable = false;
+                currentHP -= damage;
+                StartCoroutine(ChangeSpeed());
+                Debug.Log("Player HP: " + currentHP);
+                hpBulb[currentHP].SetActive(false);
+            }
+            else
+            {
+                isVulnerable = false;
+                currentHP -= damage;
+                hpBulb[currentHP].SetActive(false);
+                //die
+                SetPlayerState(PlayerState.DEAD);
+                anim.SetBool("dead", true);
+                dieOverlay.SetActive(true);                
+                StartCoroutine(PlayerRespawn());
+            }
         }        
     }
 
@@ -170,5 +212,29 @@ public class PlayerManager : MonoBehaviour
         playerMovement.speed = hurtSlowSpeed;
         yield return new WaitForSeconds(1);
         playerMovement.speed = storedSpeed;
+    }
+
+    IEnumerator PlayerRespawn()
+    {
+        yield return new WaitForSeconds(2f);
+        dieOverlayAnim.SetBool("died", true);
+        anim.SetBool("dead", false);
+        isVulnerable = false;
+        yield return new WaitForSeconds(3f);
+        dieOverlayAnim.SetBool("died", false);
+        SetPlayerState(PlayerState.ALIVE);
+        RestoreHealth();
+        dieOverlay.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        isVulnerable = true;
+    }
+
+    void RestoreHealth()
+    {
+        currentHP = maxHP;
+        for (int i = 0; i < hpBulb.Length; i++)
+        {
+            hpBulb[i].SetActive(true);
+        }
     }
 }

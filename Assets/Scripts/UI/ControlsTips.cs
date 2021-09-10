@@ -25,11 +25,14 @@ public class ControlsTips : MonoBehaviour
         {
             case Controls.Move:
                 coroutine = StartCoroutine(AutoHideText());
-                if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                if (PlayerManager.instance.playerState == PlayerState.ALIVE)
                 {
-                    GameManager.instance.doneMove = true;
-                    coroutine = StartCoroutine(HideText());
-                }
+                    if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                    {
+                        GameManager.instance.doneMove = true;
+                        coroutine = StartCoroutine(HideText());
+                    }
+                }                
                 break;
             case Controls.Jump:
                 coroutine = StartCoroutine(AutoHideText());
