@@ -200,6 +200,8 @@ public class MenuUIController : MonoBehaviour
 
     public void ButtonYesButtonforPause()    //Back to Menu
     {
+        PlayerManager.instance.gameObject.SetActive(false);
+        PlayerManager.instance.InfoVisibility(false);
         HideConfirmationPanel();
         HidepausePanel();
         SceneManager.LoadScene("BMenu");
