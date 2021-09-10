@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -15396,6 +15396,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037878, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: The replicate crystal are the main source of power. The replicate crystal
+        tend to dissolve overtime after activation.  The crystals are ranked from
+        their effectiveness.
+      objectReference: {fileID: 0}
     - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
       propertyPath: m_Text
@@ -15408,11 +15415,54 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614606, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: Standard Crystal. Mainly use in everyday applications and machines.
+        Last for months.
+      objectReference: {fileID: 0}
     - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
       propertyPath: m_Text
       value: Standard Crystal. Mainly use in everyday applications and machines.
         Last for months.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283293, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: Low Crystal. Byproduct from Standart Crystal generation. Mianly use
+        for powering lighting applications. Last for 1 to 2 days depending on its
+        size.
       objectReference: {fileID: 0}
     - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
@@ -15426,6 +15476,21 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa19c7810e5527409ff0ec262c9df41, type: 3}
 --- !u!1001 &726263067
@@ -20252,6 +20317,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037878, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: Hyper Crystal. High concerntration of Standart Crystal. Serve as power
+        source for heavy power demanding application. Last for about a year.
+      objectReference: {fileID: 0}
     - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
       propertyPath: m_Text
@@ -20263,12 +20334,56 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614606, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: 'Pure Crystal is the power core of this airship. There are suspision
+        of the core crystal purity. It was rushed and created during the late stage
+        of the war. '
+      objectReference: {fileID: 0}
     - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
       propertyPath: m_Text
       value: 'Pure Crystal is the power core of this airship. There are suspision
         of the core crystal purity. It was rushed and created during the late stage
         of the war. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283293, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: Pure Crystal. It is a near perfect replica of the legendary First Crystal.
+        Extremely difficult to recreate. Considered as purest form of man-made power
+        crystal. Estimate could last for centuries.
       objectReference: {fileID: 0}
     - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
@@ -20282,6 +20397,21 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa19c7810e5527409ff0ec262c9df41, type: 3}
 --- !u!1001 &973020235

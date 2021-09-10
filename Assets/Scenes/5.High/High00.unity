@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14172,6 +14172,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037878, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: There are rumour about poisonous gas leaked from the core. We can use
+        this as our advantage to take control of this ship.
+      objectReference: {fileID: 0}
     - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -14182,6 +14188,27 @@ PrefabInstance:
       propertyPath: m_Text
       value: There are rumour about poisonous gas leaked from the core. We can use
         this as our advantage to take control of this ship.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614606, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: There is this scientist who claim he created a Pure Crystal. If that
+        is true, we must take it for ourselves.
       objectReference: {fileID: 0}
     - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
@@ -14194,6 +14221,27 @@ PrefabInstance:
       value: There is this scientist who claim he created a Pure Crystal. If that
         is true, we must take it for ourselves.
       objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283293, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: In order to do this, we need to stop anyone who want to repair the core.
+        Not until we win this campaign.
+      objectReference: {fileID: 0}
     - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
       propertyPath: m_Text
@@ -14205,6 +14253,21 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa19c7810e5527409ff0ec262c9df41, type: 3}
 --- !u!1 &398488073
