@@ -18,6 +18,8 @@ public class TriggerCore : MonoBehaviour
     {
         if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
+            PlayerManager.instance.InfoVisibility(false);
+            PlayerManager.instance.SetPlayerState(PlayerState.DEAD);
             SceneManager.LoadScene("Ending 1");
         }
     }
