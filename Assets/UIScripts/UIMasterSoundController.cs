@@ -11,7 +11,7 @@ public class UIMasterSoundController : MonoBehaviour
     private int firstPlayInt;
     public Slider soundVolumeSlider, musicVolumeSlider;
     private float soundVolumeFloat, musicVolumeFloat;
-    public AudioSource MusicAudio;
+    public AudioSource[] MusicAudio;
     public AudioSource[] SoundAudio;
    
     // public AudioSource AllBgm;
@@ -63,7 +63,11 @@ public class UIMasterSoundController : MonoBehaviour
 
     public void UpdateSound()
     {
-        MusicAudio.volume = musicVolumeSlider.value;
+        for (int i = 0; i < MusicAudio.Length; i++)
+        {
+            MusicAudio[i].volume = musicVolumeSlider.value;
+        }
+            
 
         for(int i = 0; i < SoundAudio.Length; i++)
         {

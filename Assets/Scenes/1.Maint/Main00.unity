@@ -4844,7 +4844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVolumeSlider: {fileID: 0}
   musicVolumeSlider: {fileID: 0}
-  MusicAudio: {fileID: 0}
+  MusicAudio: []
   SoundAudio: []
 --- !u!82 &214791380
 AudioSource:
@@ -5628,7 +5628,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7787709, y: 1}
+    m_SensorSize: {x: 1.7763779, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 1
@@ -14554,7 +14554,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVolumeSlider: {fileID: 451473096}
   musicVolumeSlider: {fileID: 1623764064}
-  MusicAudio: {fileID: 2022134692}
+  MusicAudio:
+  - {fileID: 2022134692}
+  - {fileID: 0}
   SoundAudio: []
 --- !u!1 &586792108
 GameObject:
@@ -24253,7 +24255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVolumeSlider: {fileID: 0}
   musicVolumeSlider: {fileID: 0}
-  MusicAudio: {fileID: 0}
+  MusicAudio: []
   SoundAudio: []
 --- !u!82 &1089048212
 AudioSource:
