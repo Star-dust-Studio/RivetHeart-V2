@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -36123,6 +36123,302 @@ Transform:
   m_Father: {fileID: 2118309}
   m_RootOrder: 407
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1385241424
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3584081326088494889, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_text
+      value: Engineer' s Report
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560690, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560693, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560694, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -955730309
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560694, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560695, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560695, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343706, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Name
+      value: OldMan
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.82475543
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.578784
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 1.4234958
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.7318497
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343708, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b944f02fed2cf0349a18a9d77f4db77f,
+        type: 3}
+    - target: {fileID: 3584081326366343708, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343708, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343708, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.42052335
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343708, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5629869
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343708, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6603774
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343709, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037878, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: '* Cough * Cough * '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Text
+      value: '* Cough * Cough *
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327029037879, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614606, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: "\u2026 and this is how they repay a veteran, by throwing us into the
+        slums... "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u2026 and this is how they repay a veteran, by throwing us into the
+        slums...\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327309614607, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327413309641, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283293, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: fullText
+      value: "Damn those guys at the top\u2026 I served the country and joined the
+        war\u2026 * Cough * Cough * "
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Text
+      value: "Damn those guys at the top\u2026 I served the country and joined the
+        war\u2026 * Cough * Cough *\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327421283294, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1aa19c7810e5527409ff0ec262c9df41, type: 3}
+--- !u!1 &1385241425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3584081326366343706, guid: 1aa19c7810e5527409ff0ec262c9df41,
+    type: 3}
+  m_PrefabInstance: {fileID: 1385241424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1385241426
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385241425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9b8b3811bf2b5f4699718fe1c802e87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1385369284
 PrefabInstance:
   m_ObjectHideFlags: 0
