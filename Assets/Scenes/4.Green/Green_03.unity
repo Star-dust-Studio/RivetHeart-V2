@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -816,7 +816,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.7
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -2222,7 +2222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175688139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.7, y: 3.8, z: 0}
+  m_LocalPosition: {x: 89.7, y: 7.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2137838468}
@@ -7652,7 +7652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691175987}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 93.2, y: 29.5, z: 0}
+  m_LocalPosition: {x: 100.6, y: 29.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2137838468}
@@ -9739,7 +9739,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -62
+      value: -70.5
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -13766,27 +13766,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257885965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fc5f9ea4d837144921ccdd5910683c, type: 3}
+  m_Script: {fileID: 11500000, guid: 66854cc511a08f44aa72e25ffc634061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartButton: {fileID: 0}
-  QuitGame: {fileID: 0}
-  OptionsButton: {fileID: 0}
-  OptionsPanel: {fileID: 0}
-  BackToOption: {fileID: 0}
-  AudioPanel: {fileID: 0}
-  AudioButton: {fileID: 0}
-  VideoPanel: {fileID: 0}
-  VideoButton: {fileID: 0}
-  BackToMenuButton: {fileID: 0}
-  ConfirmationPanel: {fileID: 0}
-  YesButton: {fileID: 0}
-  NoButton: {fileID: 0}
-  ControlsButton: {fileID: 0}
-  ControlsPanel: {fileID: 0}
-  pausePanel: {fileID: 0}
   MapPanel: {fileID: 535185492}
-  InventoryPanel: {fileID: 0}
 --- !u!114 &1257885967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23264,7 +23247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083646659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.1, y: 20.6, z: 0}
+  m_LocalPosition: {x: 95.75, y: 14.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2137838468}

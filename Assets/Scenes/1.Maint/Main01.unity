@@ -3074,10 +3074,60 @@ PrefabInstance:
       propertyPath: m_text
       value: Engineer' s Report
       objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560690, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560693, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560694, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -955730309
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326288560694, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3584081326366343706, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
       propertyPath: m_Name
-      value: InteractCollider
+      value: DeadGuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -2.8686283
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 10.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.573588
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.23899603
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081326366343707, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.1625776
       objectReference: {fileID: 0}
     - target: {fileID: 3584081326366343708, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
@@ -3238,6 +3288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584081327413309641, guid: 1aa19c7810e5527409ff0ec262c9df41,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3584081327421283293, guid: 1aa19c7810e5527409ff0ec262c9df41,
         type: 3}
@@ -4914,7 +4969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274714814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.360783, y: 20.917734, z: 0}
+  m_LocalPosition: {x: -15.360783, y: 20.917734, z: -45.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1443996074}
@@ -9725,27 +9780,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 632314658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fc5f9ea4d837144921ccdd5910683c, type: 3}
+  m_Script: {fileID: 11500000, guid: 66854cc511a08f44aa72e25ffc634061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartButton: {fileID: 0}
-  QuitGame: {fileID: 0}
-  OptionsButton: {fileID: 0}
-  OptionsPanel: {fileID: 0}
-  BackToOption: {fileID: 0}
-  AudioPanel: {fileID: 0}
-  AudioButton: {fileID: 0}
-  VideoPanel: {fileID: 0}
-  VideoButton: {fileID: 0}
-  BackToMenuButton: {fileID: 0}
-  ConfirmationPanel: {fileID: 0}
-  YesButton: {fileID: 0}
-  NoButton: {fileID: 0}
-  ControlsButton: {fileID: 0}
-  ControlsPanel: {fileID: 0}
-  pausePanel: {fileID: 0}
   MapPanel: {fileID: 1974910015}
-  InventoryPanel: {fileID: 0}
 --- !u!114 &632314660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18574,7 +18612,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079605882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.360783, y: 20.917734, z: 0}
+  m_LocalPosition: {x: -15.360783, y: 20.917734, z: -1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1279890026}
@@ -23722,7 +23760,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.8
+      value: 104.8
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -33358,7 +33396,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.93
+      value: -113.6
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}

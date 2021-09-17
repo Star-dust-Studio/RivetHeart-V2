@@ -5,7 +5,7 @@ using UnityEngine;
 public class DontDestroyGameControl : MonoBehaviour
 {
     private AsyncOperation operation;
-    private Canvas BGameCanvas;
+    //private Canvas BGameCanvas;
 
     //public GameObject CreditBgm;
 
@@ -55,7 +55,7 @@ public class DontDestroyGameControl : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        BGameCanvas = GetComponentInChildren<Canvas>(true);
+        //BGameCanvas = GetComponentInChildren<Canvas>(true);
         DontDestroyOnLoad(gameObject);
     }
 

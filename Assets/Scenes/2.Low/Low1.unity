@@ -22141,7 +22141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686653712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -125.89, y: 34.739998, z: 0}
+  m_LocalPosition: {x: -75.25, y: 34.739998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 425829079}
@@ -22977,7 +22977,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -154.65
+      value: -171
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -25493,7 +25493,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -140.08
+      value: -133.2
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
@@ -27545,7 +27545,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.95
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -29786,7 +29786,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -162.3
+      value: -182
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -31509,7 +31509,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.7
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -36149,7 +36149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149407262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.5, y: -4.96, z: 0}
+  m_LocalPosition: {x: 4.6, y: -4.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 425829079}
@@ -37576,7 +37576,7 @@ PrefabInstance:
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -162.29
+      value: -171
       objectReference: {fileID: 0}
     - target: {fileID: 2566211342757836042, guid: ef1f3d5233cb31048aa4d1919c144482,
         type: 3}
@@ -39191,27 +39191,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1263479502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fc5f9ea4d837144921ccdd5910683c, type: 3}
+  m_Script: {fileID: 11500000, guid: 66854cc511a08f44aa72e25ffc634061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartButton: {fileID: 0}
-  QuitGame: {fileID: 0}
-  OptionsButton: {fileID: 0}
-  OptionsPanel: {fileID: 0}
-  BackToOption: {fileID: 0}
-  AudioPanel: {fileID: 0}
-  AudioButton: {fileID: 0}
-  VideoPanel: {fileID: 0}
-  VideoButton: {fileID: 0}
-  BackToMenuButton: {fileID: 0}
-  ConfirmationPanel: {fileID: 0}
-  YesButton: {fileID: 0}
-  NoButton: {fileID: 0}
-  ControlsButton: {fileID: 0}
-  ControlsPanel: {fileID: 0}
-  pausePanel: {fileID: 0}
   MapPanel: {fileID: 1053219085}
-  InventoryPanel: {fileID: 0}
 --- !u!114 &1263479504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54793,7 +54776,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemy.Array.data[1].spawnPoint
       value: 
-      objectReference: {fileID: 145416236}
+      objectReference: {fileID: 2031618556}
     - target: {fileID: 6002993491378922549, guid: cb8cc8aaccdd54c4da89ae4af71e4c74,
         type: 3}
       propertyPath: enemy.Array.data[1].patrolPoints.Array.data[2]
@@ -54809,12 +54792,12 @@ PrefabInstance:
         type: 3}
       propertyPath: enemy.Array.data[2].patrolPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1132237387}
+      objectReference: {fileID: 686653712}
     - target: {fileID: 6002993491378922549, guid: cb8cc8aaccdd54c4da89ae4af71e4c74,
         type: 3}
       propertyPath: enemy.Array.data[2].patrolPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1480261205}
+      objectReference: {fileID: 1771571443}
     - target: {fileID: 6002993491378922549, guid: cb8cc8aaccdd54c4da89ae4af71e4c74,
         type: 3}
       propertyPath: enemy.Array.data[2].patrolPoints.Array.data[2]
@@ -54824,7 +54807,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemy.Array.data[2].spawnPoint
       value: 
-      objectReference: {fileID: 145416236}
+      objectReference: {fileID: 1669115851}
     - target: {fileID: 6002993491378922550, guid: cb8cc8aaccdd54c4da89ae4af71e4c74,
         type: 3}
       propertyPath: m_Name
@@ -55259,7 +55242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669115851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -115.96, y: 34.61, z: 0}
+  m_LocalPosition: {x: -68.2, y: 33.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 425829079}
@@ -57950,7 +57933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771571443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -107.7, y: 35, z: 0}
+  m_LocalPosition: {x: -60, y: 35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 425829079}
@@ -70907,7 +70890,7 @@ PrefabInstance:
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.96
+      value: 84.5
       objectReference: {fileID: 0}
     - target: {fileID: 5421340670461550607, guid: c93c13c02b2d150489edf0683648350c,
         type: 3}
