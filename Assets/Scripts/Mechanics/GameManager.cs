@@ -20,10 +20,6 @@ public class GameManager : MonoBehaviour
 
     public EnemySpawner enemySpawner;
 
-    public int componentsCollected;
-    public bool unlockedEnding = false;
-    public bool[] doorOpened;
-
     [Header("Tutorial")]
     public bool doneMove = false;
     public bool doneJump = false;
@@ -32,6 +28,14 @@ public class GameManager : MonoBehaviour
     public bool doneMap = false;
     public bool doneShoot = false;
     public bool doneGrapple = false;
+
+    [Header("Progress Tracker")]
+    public bool isNewGame = true;
+    public bool alwaysHideHP = true;
+    public int totalComponentCollected;
+    public bool[] componentCollected;
+    public bool unlockedEnding = false;
+    public bool[] doorOpened;
 
     private void Awake()
     {
@@ -48,10 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SceneManager.LoadScene("CheatEnd");
-        }
+
     }
 
     public void RefEnemySpawner(EnemySpawner script)
@@ -59,11 +60,12 @@ public class GameManager : MonoBehaviour
         enemySpawner = script;
     }
 
-    public void CollectComponent()
+    public void CollectComponent(int componentID)
     {
-        componentsCollected++;
+        componentCollected[componentID] = true;
+        totalComponentCollected++;
 
-        if (componentsCollected == 6)
+        if (totalComponentCollected == 6)
         {
             unlockedEnding = true;
         }

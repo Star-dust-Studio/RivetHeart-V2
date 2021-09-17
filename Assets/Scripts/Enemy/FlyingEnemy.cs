@@ -107,11 +107,11 @@ public class FlyingEnemy : MonoBehaviour, IEnemy
         }
         transform.position = Vector2.MoveTowards(transform.position, patrolPoint[currentPoint].transform.position, Time.deltaTime * moveSpeed);
 
-        if (isFacingRight == false && transform.position.x < patrolPoint[currentPoint].transform.position.x)
+        if (isFacingRight == false && transform.position.x <= patrolPoint[currentPoint].transform.position.x)
         {
             FlipCharacter();
         }
-        else if (isFacingRight == true && transform.position.x > patrolPoint[currentPoint].transform.position.x)
+        else if (isFacingRight == true && transform.position.x >= patrolPoint[currentPoint].transform.position.x)
         {
             FlipCharacter();
         }  
@@ -119,9 +119,20 @@ public class FlyingEnemy : MonoBehaviour, IEnemy
 
     private void FlipCharacter()
     {
-        isFacingRight = !isFacingRight;
+        //isFacingRight = !isFacingRight;
 
-        transform.Rotate(0f, 180f, 0f);
+        //transform.Rotate(0f, 180f, 0f);
+
+        if (isFacingRight)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            isFacingRight = false;
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            isFacingRight = true;
+        }
     }
 
     private void OnDrawGizmosSelected()

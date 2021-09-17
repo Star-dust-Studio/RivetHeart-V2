@@ -104,6 +104,11 @@ public class PlayerManager : MonoBehaviour
                 invincibility = storedInvincibleValue;
             }
         }
+
+        if (GameManager.instance.alwaysHideHP == true)
+        {
+            InfoVisibility(false);
+        }
     }
 
     public void UnlockGrapple()
