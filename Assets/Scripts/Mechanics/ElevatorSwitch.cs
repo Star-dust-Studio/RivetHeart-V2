@@ -6,12 +6,20 @@ using UnityEngine.UI;
 public class ElevatorSwitch : MonoBehaviour
 {
     public Elevator elevator;
+    private bool canInteract;
     public GameObject interactSprite;
-    //[SerializeField] private int floorInput;
 
     private void Start()
     {
         interactSprite.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (canInteract && Input.GetKeyDown(KeyCode.E))
+        {
+            elevator.EngageElevator();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -19,12 +27,7 @@ public class ElevatorSwitch : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             interactSprite.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("change floorrrr");
-                elevator.ChangeFloor(1);
-            }
+            canInteract = true;
         }
     }
 
@@ -33,6 +36,7 @@ public class ElevatorSwitch : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             interactSprite.SetActive(false);
+            canInteract = false;
         }
     }
 }

@@ -5,35 +5,54 @@ using UnityEngine;
 public class Elevator : MonoBehaviour
 {
     public Transform[] floor;
+    public Transform spawnFloor;
     private int currentFloor;
-    private float moveSpeed = 0.5f;
+    public float moveSpeed = 2f;
+    private bool elevatorEngaged = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentFloor = 0;
-        transform.position = floor[currentFloor].position;
+        transform.position = spawnFloor.position;
+        if (spawnFloor == floor[0])
+        {
+            currentFloor = 0;
+        }
+        else
+        {
+            currentFloor = 1;
+        }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (elevatorEngaged)
         {
-            ChangeFloor(1);
+            if (currentFloor <= 0)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, floor[1].transform.position, Time.deltaTime * moveSpeed);
+                if (Vector2.Distance(transform.position, floor[1].transform.position) < 0.1f)
+                {
+                    elevatorEngaged = false;
+                    currentFloor++;
+                    Debug.Log(currentFloor);
+                }
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, floor[0].transform.position, Time.deltaTime * moveSpeed);
+                if (Vector2.Distance(transform.position, floor[0].transform.position) < 0.1f)
+                {                    
+                    elevatorEngaged = false;
+                    currentFloor--;
+                    Debug.Log(currentFloor);
+                }
+            }
         }
     }
 
-    public void ChangeFloor(int selection)
+    public void EngageElevator()
     {
-        Debug.Log("change floor");
-        if (transform.position.y < floor[currentFloor + selection].transform.position.y)
-        {
-            //transform.position = Vector2.MoveTowards(transform.position, floor[currentFloor + selection].transform.position, Time.deltaTime * moveSpeed);
-            //transform.Translate(Vector3.up * Time.deltaTime);
-            transform.Translate(0, Time.deltaTime, 0, Space.World);
-        }
-        //transform.Translate(floor[currentFloor + selection].position, Space.World);
-        //transform.Translate(0, 30, Time.deltaTime * moveSpeed);
-        //transform.position = Vector2.MoveTowards(transform.position, floor[currentFloor + selection].transform.position, Time.deltaTime * moveSpeed);
+        elevatorEngaged = true;
     }
 }
