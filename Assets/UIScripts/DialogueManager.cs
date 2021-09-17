@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour
 
     //for interaction text
     public GameObject interactionText;
-    public GameObject triggerbox;
+    public GameObject dialoguebox;
 
     ///[SerializeField]
     private bool openDialogue;
@@ -27,14 +27,16 @@ public class DialogueManager : MonoBehaviour
     public GameObject[] Dialogue;
     int index;
 
+    private bool canInteract = false;
+    //Coroutine coroutine;
 
     void Start()
     {
-        StartCoroutine(ShowText()); //for typewriter
+        //StartCoroutine(ShowText()); //for typewriter
 
         //interactionText.SetActive(false); //for interaction text
 
-
+        dialoguebox.SetActive(true);
         openDialogue = false;
         interactTextAppear = false;
 
@@ -45,7 +47,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (canInteract && Input.GetKeyDown(KeyCode.E))
         {
             if (!interactTextAppear)
             {
@@ -75,7 +77,7 @@ public class DialogueManager : MonoBehaviour
 
             Debug.Log(index);
         }
-
+        #region not used
         //if (index >= 10)
         //    index = 10;
 
@@ -100,6 +102,7 @@ public class DialogueManager : MonoBehaviour
         //    }
         //    Debug.Log(index);
         //}
+        #endregion
     }
 
     IEnumerator ShowText()
@@ -109,7 +112,6 @@ public class DialogueManager : MonoBehaviour
             currentText = fullText.Substring(0, i);
             this.GetComponent<Text>().text = currentText;
             yield return new WaitForSeconds(delay);
-
         }
     }
 
@@ -123,18 +125,26 @@ public class DialogueManager : MonoBehaviour
     public void DisplayDialoguePanel()
     {
         DialoguePanel.gameObject.SetActive(true);
+        //coroutine = StartCoroutine(ShowText());
         //index = 0;
+        Dialogue[index].gameObject.SetActive(true);
     }
 
     public void HideDialoguePanel()
     {
+        index = 0;
+        for (int i = 0; i < Dialogue.Length; i++)
+        {
+            Dialogue[i].gameObject.SetActive(false);
+        }
         DialoguePanel.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D player)
     {
-        if (player.gameObject.tag == "Player")
+        if (player.CompareTag("Player"))
         {
+            canInteract = true;
             interactionText.SetActive(true);
             //index = 0;
         }
@@ -144,8 +154,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            canInteract = false;
+            interactTextAppear = false;
             interactionText.SetActive(false);
-            DialoguePanel.gameObject.SetActive(false);
+            //DialoguePanel.gameObject.SetActive(false);
+            HideDialoguePanel();        
+            //StopCoroutine(coroutine);
         }
     }
 }

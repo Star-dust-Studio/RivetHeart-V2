@@ -9,8 +9,12 @@ public class PlayerHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerManager.instance.gameObject.SetActive(true);
-        PlayerManager.instance.gameObject.transform.position = spawnpoint.position;
+        if (GameManager.instance.isNewGame == true)
+        {
+            PlayerManager.instance.gameObject.SetActive(true);
+            PlayerManager.instance.gameObject.transform.position = spawnpoint.position;
+        }
+        GameManager.instance.isNewGame = false;
     }
 
     // Update is called once per frame

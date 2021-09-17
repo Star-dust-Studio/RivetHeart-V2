@@ -5,6 +5,7 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     public SwitchDoor switchDoor;
+    private bool isOpened = false;
     private bool canInteract = false;
     Animator anim;
 
@@ -16,16 +17,19 @@ public class Switch : MonoBehaviour
         if (GameManager.instance.doorOpened[switchDoor.doorID] == true)
         {
             anim.SetBool("stayActivated", true);
+            isOpened = true;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (canInteract && Input.GetKeyDown(KeyCode.E))
+        if (!isOpened && canInteract && Input.GetKeyDown(KeyCode.E))
         {
             switchDoor.OpenDoor();
             anim.SetBool("isActivated", true);
+            isOpened = true;
+            GameManager.instance.doorOpened[switchDoor.doorID] = true;
         }
     }
 

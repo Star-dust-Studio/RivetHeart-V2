@@ -20,6 +20,8 @@ public class PauseMenuUIController : MonoBehaviour
     public Button ControlsPanel;
     public Button pausePanel;
     public GameObject InventoryPanel;
+    public Button ExitToMenuButton;
+    public Button ContinueButton;
 
     ///[SerializeField]
     private bool paused;
@@ -30,6 +32,7 @@ public class PauseMenuUIController : MonoBehaviour
     {
         paused = false;
         openInventory = false;
+        pausePanel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -79,6 +82,9 @@ public class PauseMenuUIController : MonoBehaviour
     public void HidepausePanel()
     {
         pausePanel.gameObject.SetActive(false);
+        ConfirmationPanel.gameObject.SetActive(false);
+        AudioPanel.gameObject.SetActive(false);
+        ControlsPanel.gameObject.SetActive(false);
         PlayerManager.instance.InfoVisibility(true);
         PlayerManager.instance.SetPlayerState(PlayerState.ALIVE);
     }
@@ -96,11 +102,13 @@ public class PauseMenuUIController : MonoBehaviour
     public void DisplayOptionsPanel()
     {
         OptionsPanel.gameObject.SetActive(true);
+        ExitToMenuButton.gameObject.SetActive(false);
     }
 
     public void HideOptionsPanel()
     {
         OptionsPanel.gameObject.SetActive(false);
+        ExitToMenuButton.gameObject.SetActive(true);
     }
 
 
@@ -118,11 +126,17 @@ public class PauseMenuUIController : MonoBehaviour
     public void DisplayConfirmationPanel()
     {
         ConfirmationPanel.gameObject.SetActive(true);
+        OptionsButton.gameObject.SetActive(false);
+        ExitToMenuButton.gameObject.SetActive(false);
+        ContinueButton.gameObject.SetActive(false);
     }
 
     public void HideConfirmationPanel()
     {
         ConfirmationPanel.gameObject.SetActive(false);
+        OptionsButton.gameObject.SetActive(true);
+        ContinueButton.gameObject.SetActive(true);
+        ExitToMenuButton.gameObject.SetActive(true);
     }
 
 

@@ -30,7 +30,7 @@ public class TriggerCore : MonoBehaviour
         {
             interactText.SetActive(true);
 
-            if (GameManager.instance.componentsCollected == 6)
+            if (GameManager.instance.totalComponentCollected == 6)
             {
                 canInteract = true;
             }

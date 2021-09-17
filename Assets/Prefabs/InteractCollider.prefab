@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3584081325985698852}
   - component: {fileID: 3584081325985698851}
   - component: {fileID: 3584081325985698850}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 3584081326005449237}
   - component: {fileID: 3584081326005449236}
   - component: {fileID: 3584081326005449235}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialogueMask1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 3584081326056158827}
   - component: {fileID: 3584081326056158826}
   - component: {fileID: 3584081326056158825}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialogueMask3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 3584081326088494888}
   - component: {fileID: 3584081326088494890}
   - component: {fileID: 3584081326088494889}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CharacterName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 3584081326366343708}
   - component: {fileID: 3584081326366343707}
   - component: {fileID: 3584081326366343710}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: InteractCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +926,7 @@ MonoBehaviour:
   DialoguePanel: {fileID: 3584081327896537979}
   InteractionText: {fileID: 3584081326288560648}
   interactionText: {fileID: 3584081326288560690}
-  triggerbox: {fileID: 0}
+  dialoguebox: {fileID: 3584081327931957536}
   Dialogue:
   - {fileID: 3584081326005449233}
   - {fileID: 3584081327364173750}
@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 3584081326927694043}
   - component: {fileID: 3584081326927694045}
   - component: {fileID: 3584081326927694044}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BorderImage (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 3584081327029037832}
   - component: {fileID: 3584081327029037879}
   - component: {fileID: 3584081327029037878}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Dialogue1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   DialoguePanel: {fileID: 3584081327896537979}
   InteractionText: {fileID: 0}
   interactionText: {fileID: 0}
-  triggerbox: {fileID: 0}
+  dialoguebox: {fileID: 0}
   Dialogue: []
 --- !u!1 &3584081327309614604
 GameObject:
@@ -1124,7 +1124,7 @@ GameObject:
   - component: {fileID: 3584081327309614592}
   - component: {fileID: 3584081327309614607}
   - component: {fileID: 3584081327309614606}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Dialogue3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   DialoguePanel: {fileID: 3584081327896537979}
   InteractionText: {fileID: 0}
   interactionText: {fileID: 0}
-  triggerbox: {fileID: 0}
+  dialoguebox: {fileID: 0}
   Dialogue: []
 --- !u!1 &3584081327364173750
 GameObject:
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 3584081327364173706}
   - component: {fileID: 3584081327364173705}
   - component: {fileID: 3584081327364173704}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialogueMask2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 3584081327413309643}
   - component: {fileID: 3584081327413309642}
   - component: {fileID: 3584081327413309645}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: DialogueCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,7 +1418,7 @@ MonoBehaviour:
   DialoguePanel: {fileID: 3584081327896537979}
   InteractionText: {fileID: 0}
   interactionText: {fileID: 3584081326288560690}
-  triggerbox: {fileID: 3584081326366343706}
+  dialoguebox: {fileID: 0}
   Dialogue: []
 --- !u!1 &3584081327421283291
 GameObject:
@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 3584081327421283295}
   - component: {fileID: 3584081327421283294}
   - component: {fileID: 3584081327421283293}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Dialogue2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1517,7 +1517,7 @@ MonoBehaviour:
   DialoguePanel: {fileID: 3584081327896537979}
   InteractionText: {fileID: 0}
   interactionText: {fileID: 0}
-  triggerbox: {fileID: 0}
+  dialoguebox: {fileID: 0}
   Dialogue: []
 --- !u!1 &3584081327733320266
 GameObject:
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 3584081327733320270}
   - component: {fileID: 3584081327733320269}
   - component: {fileID: 3584081327733320268}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3584081327896537977}
   - component: {fileID: 3584081327896537979}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialoguePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1823,13 +1823,13 @@ GameObject:
   - component: {fileID: 3584081327931957539}
   - component: {fileID: 3584081327931957538}
   - component: {fileID: 3584081327931957540}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialogueBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3584081327931957537
 RectTransform:
   m_ObjectHideFlags: 0
